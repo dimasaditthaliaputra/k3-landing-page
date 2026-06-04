@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ap-1",
+    "name": "Assembly Point (Lantai 1)",
+    "category": "assembly-point",
+    "description": "Titik kumpul utama di lantai 1 dekat Main Entrance.",
+    "coordinates": { "lat": 180, "lng": 360 },
+    "emergencyContact": "Ext. 1111"
+  },
+  {
+    "id": "ap-2",
+    "name": "Jalur Keluar (Main Entrance)",
+    "category": "assembly-point",
+    "description": "Jalur evakuasi utama dari gedung.",
+    "coordinates": { "lat": 60, "lng": 250 },
+    "emergencyContact": "Ext. 1112"
+  },
+  {
+    "id": "med-1",
+    "name": "Kotak P3K - Processing Plant",
+    "category": "medical",
+    "description": "Fasilitas pertolongan pertama dekat Tangga Darurat Lantai 1.",
+    "coordinates": { "lat": 440, "lng": 290 },
+    "emergencyContact": "Ext. 9999"
+  },
+  {
+    "id": "med-2",
+    "name": "Kotak P3K - Power Plant",
+    "category": "medical",
+    "description": "Kotak P3K untuk area Power Plant.",
+    "coordinates": { "lat": 180, "lng": 210 },
+    "emergencyContact": "Ext. 9998"
+  },
+  {
+    "id": "fs-1",
+    "name": "APAR - Heavy Workshop",
+    "category": "fire-safety",
+    "description": "Alat Pemadam Api Ringan di workshop.",
+    "coordinates": { "lat": 680, "lng": 210 },
+    "emergencyContact": "113"
+  },
+  {
+    "id": "fs-2",
+    "name": "APAR - Tangga Darurat Lt 1",
+    "category": "fire-safety",
+    "description": "Alat Pemadam Api Ringan dekat tangga darurat.",
+    "coordinates": { "lat": 530, "lng": 360 },
+    "emergencyContact": "113"
+  },
+  {
+    "id": "fs-3",
+    "name": "Alarm Kebakaran - Lab 1",
+    "category": "fire-safety",
+    "description": "Titik aktivasi alarm manual di Lab 1 (Lantai 2).",
+    "coordinates": { "lat": 530, "lng": 810 },
+    "emergencyContact": "113"
+  },
+  {
+    "id": "er-1",
+    "name": "Tangga Darurat Lantai 1",
+    "category": "evacuation-route",
+    "description": "Tangga darurat menuju lantai 2.",
+    "coordinates": { "lat": 450, "lng": 380 },
+    "emergencyContact": "Ext. 3333"
+  },
+  {
+    "id": "er-2",
+    "name": "Tangga Darurat Lantai 2",
+    "category": "evacuation-route",
+    "description": "Jalur turun darurat dari lantai 2.",
+    "coordinates": { "lat": 450, "lng": 850 },
+    "emergencyContact": "Ext. 3334"
+  },
+  {
+    "id": "er-3",
+    "name": "Jalur Evakuasi Flotation Area",
+    "category": "evacuation-route",
+    "description": "Koridor utama menuju tangga darurat.",
+    "coordinates": { "lat": 300, "lng": 700 },
+    "emergencyContact": "Ext. 3335"
+  },
+  {
+    "id": "sec-1",
+    "name": "Control Room Lantai 2",
+    "category": "security-post",
+    "description": "Pusat pemantauan kontrol area operasi.",
+    "coordinates": { "lat": 680, "lng": 600 },
+    "emergencyContact": "Ext. 2222"
+  },
+  {
+    "id": "sec-2",
+    "name": "Management Office",
+    "category": "security-post",
+    "description": "Kantor manajemen lantai 2.",
+    "coordinates": { "lat": 200, "lng": 600 },
+    "emergencyContact": "Ext. 2223"
+  }
+]

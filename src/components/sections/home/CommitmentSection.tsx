@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+
 import { SectionHeader } from '@/components/shared/SectionHeader';
 import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
 
@@ -63,10 +62,6 @@ export function CommitmentSection() {
                   <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
                     {item.description}
                   </p>
-                  <Link href={item.link} className="inline-flex items-center gap-2 font-semibold text-primary-700 dark:text-safety-gold hover:text-safety-gold transition-colors group w-fit">
-                    Baca selengkapnya 
-                    <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
                 </RevealOnScroll>
               </div>
             );

@@ -85,7 +85,7 @@ export default function VisiMisiPage() {
               <Quote className="absolute bottom-6 right-6 w-24 h-24 text-white/5 rotate-180" />
               
               <h2 className="relative z-10 text-2xl md:text-4xl lg:text-5xl font-bold text-safety-gold leading-tight">
-                "Menjadi perusahaan tambang kelas dunia yang bebas dari insiden dan penyakit akibat kerja."
+                &quot;Menjadi perusahaan tambang kelas dunia yang bebas dari insiden dan penyakit akibat kerja.&quot;
               </h2>
             </div>
           </RevealOnScroll>

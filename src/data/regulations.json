@@ -1,0 +1,22 @@
+[
+  { "id": "reg-1", "nomor": "UU No. 1", "judul": "Keselamatan Kerja", "tahun": 1970, "kategori": "UU", "url": "/docs/dummy.pdf" },
+  { "id": "reg-2", "nomor": "UU No. 13", "judul": "Ketenagakerjaan", "tahun": 2003, "kategori": "UU", "url": "/docs/dummy.pdf" },
+  { "id": "reg-3", "nomor": "UU No. 4", "judul": "Pertambangan Mineral dan Batubara", "tahun": 2009, "kategori": "UU", "url": "/docs/dummy.pdf" },
+  { "id": "reg-4", "nomor": "UU No. 3", "judul": "Perubahan atas UU No. 4 Tahun 2009 tentang Pertambangan Mineral dan Batubara", "tahun": 2020, "kategori": "UU", "url": "/docs/dummy.pdf" },
+  { "id": "reg-5", "nomor": "UU No. 11", "judul": "Cipta Kerja", "tahun": 2020, "kategori": "UU", "url": "/docs/dummy.pdf" },
+  { "id": "reg-6", "nomor": "PP No. 50", "judul": "Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja", "tahun": 2012, "kategori": "PP", "url": "/docs/dummy.pdf" },
+  { "id": "reg-7", "nomor": "PP No. 55", "judul": "Pembinaan dan Pengawasan Penyelenggaraan Pengelolaan Usaha Pertambangan Mineral dan Batubara", "tahun": 2010, "kategori": "PP", "url": "/docs/dummy.pdf" },
+  { "id": "reg-8", "nomor": "PP No. 96", "judul": "Pelaksanaan Kegiatan Usaha Pertambangan Mineral dan Batubara", "tahun": 2021, "kategori": "PP", "url": "/docs/dummy.pdf" },
+  { "id": "reg-9", "nomor": "PP No. 5", "judul": "Penyelenggaraan Perizinan Berusaha Berbasis Risiko", "tahun": 2021, "kategori": "PP", "url": "/docs/dummy.pdf" },
+  { "id": "reg-10", "nomor": "Permen ESDM No. 26", "judul": "Pelaksanaan Kaidah Teknik Pertambangan yang Baik dan Pengawasan Pertambangan Mineral dan Batubara", "tahun": 2018, "kategori": "Permen", "url": "/docs/dummy.pdf" },
+  { "id": "reg-11", "nomor": "Kepmen ESDM No. 1827 K/30/MEM", "judul": "Pedoman Pelaksanaan Kaidah Teknik Pertambangan yang Baik", "tahun": 2018, "kategori": "Permen", "url": "/docs/dummy.pdf" },
+  { "id": "reg-12", "nomor": "Permenaker No. 5", "judul": "Keselamatan dan Kesehatan Kerja Lingkungan Kerja", "tahun": 2018, "kategori": "Permen", "url": "/docs/dummy.pdf" },
+  { "id": "reg-13", "nomor": "Permenaker No. 8", "judul": "Alat Pelindung Diri", "tahun": 2010, "kategori": "Permen", "url": "/docs/dummy.pdf" },
+  { "id": "reg-14", "nomor": "Permenaker No. 9", "judul": "K3 dalam Pekerjaan pada Ketinggian", "tahun": 2016, "kategori": "Permen", "url": "/docs/dummy.pdf" },
+  { "id": "reg-15", "nomor": "ISO 45001", "judul": "Sistem Manajemen Keselamatan dan Kesehatan Kerja", "tahun": 2018, "kategori": "Standar Internasional", "url": "/docs/dummy.pdf" },
+  { "id": "reg-16", "nomor": "ISO 14001", "judul": "Sistem Manajemen Lingkungan", "tahun": 2015, "kategori": "Standar Internasional", "url": "/docs/dummy.pdf" },
+  { "id": "reg-17", "nomor": "OHSAS 18001", "judul": "Occupational Health and Safety Assessment Series (Digantikan ISO 45001)", "tahun": 2007, "kategori": "Standar Internasional", "url": "/docs/dummy.pdf" },
+  { "id": "reg-18", "nomor": "ICMM Principle 4", "judul": "Implementasi Strategi Manajemen Risiko K3", "tahun": 2020, "kategori": "Standar Internasional", "url": "/docs/dummy.pdf" },
+  { "id": "reg-19", "nomor": "ICMM Principle 5", "judul": "Mengejar Peningkatan Berkelanjutan di Kinerja K3", "tahun": 2020, "kategori": "Standar Internasional", "url": "/docs/dummy.pdf" },
+  { "id": "reg-20", "nomor": "Permenaker No. 4", "judul": "Panitia Pembina Keselamatan dan Kesehatan Kerja serta Tata Cara Penunjukan Ahli K3", "tahun": 1987, "kategori": "Permen", "url": "/docs/dummy.pdf" }
+]

@@ -98,6 +98,7 @@ const CardSwap = ({
   const order = useRef<number[]>(Array.from({ length: childArr.length }, (_, i) => i));
 
   const tlRef = useRef<gsap.core.Timeline | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const intervalRef = useRef<any>(null);
   const container = useRef<HTMLDivElement>(null);
 
@@ -195,6 +196,7 @@ const CardSwap = ({
 
   const rendered = childArr.map((child, i) => {
     if (isValidElement(child)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const element = child as React.ReactElement<any>;
       return cloneElement(element, {
         key: i,

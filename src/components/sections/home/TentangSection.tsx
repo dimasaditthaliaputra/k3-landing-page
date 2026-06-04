@@ -53,8 +53,8 @@ export function TentangSection() {
       <section className="py-20 md:py-28 relative">
         <div className="container-k3 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <RevealOnScroll delay={0.1} className="w-full flex items-center justify-center relative min-h-[400px] md:min-h-[460px] overflow-visible">
-              <div className="relative w-[30rem] h-[20rem] max-w-full overflow-visible">
+            <RevealOnScroll delay={0.1} className="w-full flex items-center justify-center relative min-h-[280px] md:min-h-[460px] overflow-visible mt-8 md:mt-0">
+              <div className="relative w-[85%] md:w-[30rem] aspect-[4/3] md:aspect-auto md:h-[20rem] max-w-full overflow-visible mx-auto">
                 <CardSwap
                   width="100%"
                   height="100%"

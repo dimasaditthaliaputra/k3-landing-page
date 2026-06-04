@@ -35,7 +35,7 @@ export function HeroSection() {
             transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(201,135,10,0.4)] hover:shadow-[0_0_30px_rgba(201,135,10,0.6)]'>
             Lihat Safety Map <ArrowRight size={20} />
           </Link>
-          <Link href='/video'
+          <Link href='/#video'
             className='inline-flex items-center gap-2 px-8 py-4 rounded-full
             border border-white/30 hover:border-white/60 text-white font-bold text-lg
             backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:scale-105'>

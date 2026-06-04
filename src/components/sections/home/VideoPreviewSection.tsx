@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { PlayCircle } from 'lucide-react';
 import { SectionHeader } from '@/components/shared/SectionHeader';
@@ -7,7 +6,7 @@ import videos from '@/data/videos.json';
 
 export function VideoPreviewSection() {
   return (
-    <section className="py-24 bg-white dark:bg-primary-900">
+    <section className="py-24 bg-white dark:bg-primary-900" id='video'>
       <div className="container-k3">
         <SectionHeader 
           eyebrow="K3 PTFI" 
@@ -42,11 +41,11 @@ export function VideoPreviewSection() {
             </RevealOnScroll>
           ))}
         </div>
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <Link href="/video" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-200 dark:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-800 text-primary-700 dark:text-white font-semibold transition-colors">
             Lihat Semua Video
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

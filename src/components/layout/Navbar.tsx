@@ -245,6 +245,7 @@ export function PillNav({
             logoRef.current = el;
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} alt={logoAlt} ref={logoImgRef} />
         </Link>
 
@@ -317,7 +318,7 @@ export default function Navbar() {
     { label: 'Tentang', href: '/#tentang' },
     { label: 'Safety Map', href: '/safety-map' },
     { label: 'Regulasi', href: '/landasan-hukum' },
-    { label: 'Video', href: '/video' },
+    // { label: 'Video', href: '/video' },
     { label: 'Galeri', href: '/galeri' },
     { label: 'Kontak', href: '/#kontak' },
   ];
