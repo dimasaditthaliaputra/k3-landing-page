@@ -1,0 +1,1702 @@
+
+PT FREEPORT INDONESIA
+PRODUCT REQUIREMENTS DOCUMENT
+Landing Page K3 — Keselamatan dan Kesehatan Kerja
+Versi Dokumen	v1.0 — INITIAL RELEASE
+Tanggal	Juni 2026
+Status	DRAFT — FOR REVIEW
+Pemilik Produk	Tim Divisi K3 PT Freeport Indonesia
+Dibuat Oleh	Senior Product Manager & Frontend Architect
+Teknologi Utama	Next.js (App Router) · Tailwind CSS · React
+
+DOKUMEN INI BERSIFAT RAHASIA DAN HANYA UNTUK INTERNAL PERUSAHAAN
+ 
+Daftar Isi
+Dokumen ini berisi 18 seksi utama ditambah Appendix yang mencakup seluruh aspek Product Requirements untuk pengembangan Landing Page K3 PT Freeport Indonesia.
+
+Seksi	Judul	Hal.
+1	Executive Summary	4
+2	Product Goals & Objectives	5
+3	User Personas	6
+4	Sitemap & Information Architecture	8
+5	User Flow	9
+6	Functional Requirements	10
+7	Non-Functional Requirements	13
+8	Desain UI/UX Guidelines	14
+9	Komponen React yang Dibutuhkan	16
+10	Struktur Folder Next.js	18
+11	SEO Requirements	20
+12	Accessibility Requirements (WCAG 2.1 AA)	21
+13	Responsive Design Requirements	22
+14	Wireframe Description per Halaman	23
+15	Acceptance Criteria per Halaman	25
+16	Future Enhancement Opportunities	27
+17	Technology Stack & Architecture Recommendations	28
+18	Dependencies, Risks & Mitigations	29
+19	React Bits — Komponen Siap Pakai & Snippets	30
+20	Advanced Animation System — Panduan Lengkap	36
+A	Appendix — Checklist Pre-Launch	41
+ 
+1. Executive Summary
+Dokumen ini merupakan Product Requirements Document (PRD) komprehensif untuk pengembangan Landing Page K3 (Keselamatan dan Kesehatan Kerja) PT Freeport Indonesia. Website ini akan menjadi portal informasi K3 resmi perusahaan yang modern, profesional, dan mudah diakses oleh seluruh pemangku kepentingan — mulai dari karyawan tetap, kontraktor, mitra kerja, hingga masyarakat umum yang ingin memahami komitmen keselamatan perusahaan.
+
+Ringkasan Proyek
+Aspek	Detail
+Nama Proyek	Portal K3 PT Freeport Indonesia — Landing Page Resmi
+Tujuan Utama	Portal informasi K3 yang modern, terpercaya, dan mudah diakses
+Target Launch	Q4 2026 (estimasi 4–6 bulan pengembangan)
+Framework	Next.js 16+ dengan App Router
+Styling	Tailwind CSS v3+
+Deployment Target	Vercel / Self-hosted on-premise
+Bahasa Konten	Bahasa Indonesia (primary) + English (secondary)
+Aksesibilitas	WCAG 2.1 Level AA
+
+Sebagai Senior Product Manager dan Senior Frontend Architect, dokumen ini dirancang untuk menjadi single source of truth bagi seluruh tim yang terlibat dalam proyek — mulai dari desainer, developer frontend, backend engineer, content writer, hingga stakeholder bisnis. Setiap halaman, komponen, dan keputusan teknis telah dipertimbangkan secara menyeluruh agar menghasilkan produk digital yang tidak hanya estetis, namun juga fungsional, mudah dipelihara (maintainable), dan skalabel dalam jangka panjang.
+ 
+2. Product Goals & Objectives
+2.1 Tujuan Bisnis
+•	Membangun citra profesional PT Freeport Indonesia sebagai perusahaan yang berkomitmen tinggi terhadap keselamatan kerja di tingkat nasional dan internasional.
+•	Menyediakan satu pintu akses (single access point) untuk seluruh informasi, regulasi, prosedur, dan dokumentasi K3 perusahaan.
+•	Meningkatkan kesadaran dan budaya keselamatan (safety culture) di seluruh lapisan organisasi melalui platform digital yang mudah diakses.
+•	Mendukung kepatuhan (compliance) terhadap regulasi K3 nasional (Kemnaker RI) dan standar internasional (OHSAS 18001 / ISO 45001).
+•	Mengurangi friksi akses informasi K3 bagi karyawan, kontraktor, dan mitra kerja, sehingga budaya K3 lebih mudah diterapkan sehari-hari.
+
+2.2 Tujuan Produk
+•	Menyediakan navigasi yang intuitif dan alur informasi yang logis bagi semua segmen pengguna.
+•	Menampilkan konten multimedia (video, galeri foto, peta interaktif) yang meningkatkan keterlibatan pengguna (user engagement).
+•	Menghadirkan desain yang responsif (mobile-first) sehingga dapat diakses optimal dari perangkat apapun, termasuk di area operasional tambang.
+•	Memastikan website dapat di-maintain secara mandiri oleh tim internal K3 tanpa ketergantungan penuh pada developer teknis (via CMS atau modular content).
+•	Mencapai skor Google Lighthouse >= 90 pada semua metrik (Performance, Accessibility, Best Practices, SEO).
+
+2.3 Key Success Metrics (KPI)
+Metrik	Target	Cara Pengukuran
+Page Load Time (LCP)	< 2.5 detik	Google Lighthouse / Core Web Vitals
+Lighthouse Performance Score	>= 90	Google Lighthouse Audit
+Lighthouse Accessibility Score	>= 90 (WCAG 2.1 AA)	Lighthouse + axe DevTools
+Mobile Usability Score	100%	Google Search Console
+Bounce Rate (target 3 bulan)	< 50%	Google Analytics 4
+Avg. Session Duration	> 2 menit	Google Analytics 4
+Pages per Session	>= 3 halaman	Google Analytics 4
+Core Web Vitals — CLS	< 0.1	Search Console / CrUX
+Core Web Vitals — FID/INP	< 200ms	Search Console / CrUX
+ 
+3. User Personas
+3.1 Persona 1 — Karyawan Tetap PT Freeport Indonesia
+Atribut	Detail
+Nama Persona	Budi Santoso — Safety Supervisor
+Usia	32–45 tahun
+Pendidikan	S1 Teknik / K3
+Perangkat Utama	Smartphone Android & PC Kantor
+Frekuensi Akses	Harian
+Goal Utama	Mengakses prosedur K3 terbaru, regulasi, dan video pelatihan dengan cepat
+Pain Points	Sulitnya menemukan dokumen terbaru; informasi tersebar di berbagai platform internal
+Kebutuhan Kritis	Akses cepat ke Safety Map, Video K3, Landasan Hukum, dan Struktur Organisasi
+
+3.2 Persona 2 — Kontraktor & Mitra Kerja
+Atribut	Detail
+Nama Persona	Ahmad Wijaya — Project Manager Kontraktor
+Usia	28–50 tahun
+Pendidikan	S1 berbagai bidang teknik
+Perangkat Utama	Smartphone (sering di lapangan), Laptop
+Frekuensi Akses	Mingguan / saat onboarding proyek baru
+Goal Utama	Memahami standar K3 PTFI sebelum memulai pekerjaan; memastikan kepatuhan tim
+Pain Points	Tidak familiar dengan prosedur internal; membutuhkan informasi orientasi keselamatan yang ringkas
+Kebutuhan Kritis	Video orientasi keselamatan, Landasan Hukum, Visi & Misi K3, Kontak darurat
+
+3.3 Persona 3 — Manajemen & Eksekutif
+Atribut	Detail
+Nama Persona	Ibu Sari Dewi — VP Health, Safety & Environment
+Usia	40–55 tahun
+Pendidikan	S2 Manajemen / K3
+Perangkat Utama	iPad, Laptop MacBook
+Frekuensi Akses	Bulanan / saat audit & review
+Goal Utama	Memastikan tampilan profesional perusahaan; memonitor konten K3 yang dipublikasikan
+Pain Points	Website lama tidak representatif; sulit untuk update konten secara mandiri
+Kebutuhan Kritis	Tampilan statistik K3, Struktur Organisasi, Tentang Perusahaan, Galeri Kegiatan
+
+3.4 Persona 4 — Pengunjung Umum / Rekrutmen
+Atribut	Detail
+Nama Persona	Rizki Mahasiswa — Calon Karyawan / Researcher
+Usia	20–30 tahun
+Pendidikan	Mahasiswa/Alumni S1 K3 atau Teknik
+Perangkat Utama	Smartphone (mobile-first)
+Frekuensi Akses	Jarang, biasanya dari hasil pencarian Google
+Goal Utama	Memahami budaya K3 PTFI; mencari referensi standar keselamatan tambang terbaik
+Pain Points	Tidak tahu harus mulai dari mana; konten terlalu teknis/internal
+Kebutuhan Kritis	Beranda yang informatif, Tentang Perusahaan, Visi & Misi K3, Galeri Kegiatan
+ 
+4. Sitemap & Information Architecture
+4.1 Sitemap Terstruktur
+Berikut adalah sitemap final yang telah dioptimalkan untuk alur informasi yang logis, SEO-friendly, dan sesuai dengan kebutuhan semua persona pengguna:
+
+Level	Halaman	URL Slug	Prioritas
+L0 — Root	Beranda / Home	/	KRITIS
+L1	Tentang PT Freeport Indonesia	/tentang	TINGGI
+L1	Visi & Misi K3	/visi-misi	TINGGI
+L1	Safety Map K3	/safety-map	TINGGI
+L1	Struktur Organisasi	/struktur-organisasi	SEDANG
+L1	Landasan Hukum K3	/landasan-hukum	TINGGI
+L1	Video Keselamatan	/video	TINGGI
+L1	Galeri Kegiatan K3	/galeri	SEDANG
+L1	Kontak & Informasi	/kontak	SEDANG
+L2	Profil Perusahaan (sub)	/tentang/profil	SEDANG
+L2	Sejarah (sub)	/tentang/sejarah	RENDAH
+L2	Komitmen Keselamatan (sub)	/tentang/komitmen	TINGGI
+
+4.2 Navigation Architecture
+Rekomendasi Arsitektur
+Gunakan sticky top navigation dengan mega-menu dropdown untuk halaman L1. Bottom navigation pada mobile (5 item utama). Breadcrumb untuk semua halaman L2+.
+
+Primary Navigation (Desktop): Beranda | Tentang PTFI | K3 (dropdown) | Safety Map | Media (dropdown) | Kontak
+K3 Dropdown: Visi & Misi K3 / Struktur Organisasi / Landasan Hukum
+Media Dropdown: Video Keselamatan / Galeri Kegiatan
+Mobile Bottom Nav (5 Tab): Home | Tentang | K3 | Media | Kontak
+ 
+5. User Flow
+5.1 Primary User Flow — Karyawan Baru (Onboarding K3)
+1.	Karyawan baru mengakses website PTFI K3 melalui link yang diberikan HRD
+2.	Landing di Beranda → membaca Hero Section → melihat statistik K3
+3.	Klik Quick Access Menu: "Orientasi Keselamatan" → diarahkan ke /video
+4.	Filter video berdasarkan kategori "Orientasi" → menonton video
+5.	Klik tautan menuju /landasan-hukum untuk membaca regulasi yang berlaku
+6.	Klik /safety-map untuk melihat lokasi titik kumpul darurat di area kerja
+7.	Selesai: Karyawan memiliki pemahaman dasar K3 sebelum mulai bekerja
+
+5.2 Primary User Flow — Kontraktor (Pre-Project Compliance)
+8.	Kontraktor mengakses website dari email undangan atau QR code
+9.	Landing di Beranda → klik CTA "Informasi untuk Kontraktor"
+10.	Diarahkan ke /visi-misi → memahami komitmen keselamatan PTFI
+11.	Navigasi ke /landasan-hukum → mengunduh regulasi yang relevan
+12.	Klik /video → menonton video "Prosedur Kerja Aman"
+13.	Navigasi ke /kontak → menghubungi tim K3 untuk klarifikasi
+
+5.3 Primary User Flow — Manajemen (Monitoring & Audit)
+14.	Eksekutif membuka website melalui bookmark / direct link
+15.	Beranda → membaca statistik K3 terkini (Zero Accident Rate, dll.)
+16.	Navigasi ke /struktur-organisasi → review hirarki dan tanggung jawab
+17.	Navigasi ke /galeri → melihat dokumentasi kegiatan K3 terbaru
+18.	Navigasi ke /tentang/komitmen → memverifikasi narasi komitmen perusahaan
+ 
+6. Functional Requirements
+6.1 Beranda (Home) — /
+FR-01: Hero Section
+•	Menampilkan full-width hero dengan background video atau gambar high-quality area operasional PTFI
+•	Headline utama: tagline K3 perusahaan (contoh: "Safety is Our Culture, Not Just a Compliance")
+•	Sub-headline singkat mendeskripsikan misi keselamatan
+•	Dua CTA button: "Pelajari K3 Kami" dan "Lihat Video Keselamatan"
+•	Overlay gradient untuk keterbacaan teks di atas background
+
+FR-02: Safety Statistics Counter
+•	Animasi counting-up untuk angka statistik K3: Safe Man Hours, Zero Accident Days, Jumlah Karyawan Terlatih, Safety Compliance Rate (%)
+•	Statistik ditampilkan dalam kartu dengan ikon SVG yang relevan
+•	Angka dapat dikonfigurasi melalui constants atau CMS
+
+FR-03: Quick Access Menu
+•	Grid 4-6 kartu dengan ikon besar dan label singkat: Safety Map, Video K3, Regulasi, Struktur Org, Galeri, Kontak Darurat
+•	Hover effect dengan skala dan shadow
+•	Link menuju halaman yang relevan
+
+FR-04: Company Commitment Section
+•	Section highlight nilai-nilai dan komitmen K3 perusahaan
+•	Menggunakan layout alternating (gambar-teks, teks-gambar) untuk variasi visual
+
+6.2 Tentang PT Freeport Indonesia — /tentang
+FR-05: Profil & Sejarah Perusahaan
+•	Timeline interaktif sejarah PTFI dengan penekanan pada milestone K3
+•	Konten profil perusahaan: berdiri, lokasi operasional, skala operasi
+•	Nilai-nilai perusahaan ditampilkan dalam card grid
+
+FR-06: Komitmen Keselamatan
+•	Narasi panjang komitmen terhadap keselamatan kerja
+•	Statistik pendukung: penghargaan K3 yang diraih, sertifikasi internasional
+
+6.3 Visi & Misi K3 — /visi-misi
+FR-07: Visi Keselamatan
+•	Tampilan bold statement untuk visi keselamatan perusahaan dengan tipografi besar
+•	Ikon dan visual pendukung
+
+FR-08: Misi & Prinsip K3
+•	Numbered list atau card grid untuk misi dan prinsip K3
+•	Budaya keselamatan: Safety Hierarchy of Controls, Stop Work Authority, dll.
+
+6.4 Safety Map K3 — /safety-map
+FR-09: Peta Interaktif
+•	Integrasi peta area operasional menggunakan Leaflet.js atau Google Maps Embed
+•	Marker/pin untuk: Assembly Point (titik kumpul darurat), First Aid Station, Fire Extinguisher Points, High Risk Areas, Emergency Exit Routes
+•	Filter layer: pengguna dapat toggle visibility setiap kategori marker
+•	Popup info saat klik marker: nama, instruksi, nomor kontak darurat terkait
+•	Fallback: jika peta interaktif tidak tersedia, tampilkan image peta statis yang dapat di-zoom
+
+6.5 Struktur Organisasi — /struktur-organisasi
+FR-10: Org Chart
+•	Org chart interaktif atau visual yang dapat di-zoom/pan
+•	Setiap node menampilkan: jabatan, nama (opsional), level tanggung jawab K3
+•	Section tambahan: deskripsi tanggung jawab K3 per level organisasi dalam tabel
+
+6.6 Landasan Hukum K3 — /landasan-hukum
+FR-11: Regulatory Library
+•	Tabel/list regulasi yang dapat difilter: Undang-Undang, Peraturan Pemerintah, Peraturan Menteri, Kebijakan Internal
+•	Setiap item: nomor regulasi, judul, tahun terbit, link unduh PDF atau link eksternal
+•	Search functionality untuk mencari regulasi berdasarkan keyword
+•	Badge kategori berwarna untuk membedakan jenis regulasi
+
+6.7 Video Keselamatan Kerja — /video
+FR-12: Video Library
+•	Grid tampilan video dengan thumbnail, judul, durasi, dan kategori
+•	Kategori/tab filter: Orientasi, Prosedur Kerja Aman, Tanggap Darurat, Kampanye K3
+•	Embed video dari YouTube atau hosting internal (iframe)
+•	Search video berdasarkan judul atau kategori
+•	Lightbox/modal player agar pengguna tidak meninggalkan halaman
+•	Playlist sidebar untuk menonton seri video secara berurutan
+
+6.8 Galeri Kegiatan K3 — /galeri
+FR-13: Photo Gallery
+•	Masonry atau grid layout responsif untuk foto kegiatan
+•	Filter kategori: Pelatihan K3, Simulasi Darurat, Kampanye K3, Inspeksi, Award/Penghargaan
+•	Lightbox saat klik foto: tampilkan gambar full-size dengan navigasi prev/next
+•	Setiap foto memiliki caption, tanggal, dan kategori
+•	Infinite scroll atau pagination untuk performa
+
+6.9 Kontak & Informasi — /kontak
+FR-14: Contact Information
+•	Informasi kontak lengkap: nomor telepon darurat K3, email, alamat kantor
+•	Embed Google Maps lokasi kantor PTFI
+•	FAQ accordion: pertanyaan umum seputar K3 PTFI
+•	Tautan cepat (quick links) ke halaman penting
+•	Form kontak sederhana (nama, email, pesan, topik pertanyaan) — opsional
+ 
+7. Non-Functional Requirements
+7.1 Performance Requirements
+Metrik	Target	Catatan
+Largest Contentful Paint (LCP)	< 2.5 detik	Core Web Vital — GOOD threshold
+First Input Delay (FID) / INP	< 200ms	Core Web Vital
+Cumulative Layout Shift (CLS)	< 0.1	Core Web Vital — GOOD threshold
+Time to First Byte (TTFB)	< 800ms	Server/CDN performance
+Total Page Size (Homepage)	< 1.5 MB	Termasuk assets awal
+JavaScript Bundle (initial)	< 200 KB gzipped	Code splitting mandatory
+Image Optimization	Next.js Image component wajib	Format WebP/AVIF otomatis
+Lighthouse Score Semua Halaman	>= 90 semua kategori	Performance, A11y, SEO, Best Practices
+
+7.2 Availability & Reliability
+•	Uptime target: 99.5% per bulan (downtime maksimal ~3.6 jam/bulan)
+•	Graceful degradation: jika peta interaktif gagal load, tampilkan fallback gambar statis
+•	Error boundary pada setiap halaman untuk mencegah crash total
+•	Maintenance mode page yang informatif jika ada scheduled downtime
+
+7.3 Security Requirements
+•	HTTPS wajib (SSL/TLS) — redirect semua HTTP ke HTTPS
+•	Content Security Policy (CSP) header untuk mencegah XSS
+•	Tidak ada data sensitif karyawan yang ditampilkan publik
+•	Rate limiting pada form kontak (jika diimplementasikan)
+•	Dependencies audit rutin dengan npm audit / Dependabot
+
+7.4 Browser Compatibility
+Browser	Versi Minimum	Prioritas
+Google Chrome	90+	KRITIS
+Mozilla Firefox	88+	TINGGI
+Microsoft Edge	90+	TINGGI
+Safari (macOS & iOS)	14+	TINGGI
+Chrome Mobile (Android)	90+	KRITIS
+Samsung Internet	14+	SEDANG
+Internet Explorer 11	TIDAK DIDUKUNG	DIHENTIKAN
+ 
+8. Desain UI/UX Guidelines
+8.1 Design System — Color Palette
+Nama Token	Hex Value	Kegunaan
+primary-900	#0D2040	Text heading, navbar background dark
+primary-700	#1B3A6B	Primary buttons, highlights, H1 color
+primary-500	#2A5CAA	Links, hover states, secondary buttons
+primary-100	#EEF2F8	Card backgrounds, subtle sections
+accent-gold	#C9870A	Accents, warnings, safety badges
+accent-orange	#E87B0A	CTA buttons, danger alerts (non-critical)
+success-600	#1A7A3E	Success states, zero-accident badges
+danger-600	#C0392B	Critical warnings, emergency info
+neutral-900	#111827	Body text
+neutral-500	#6B7280	Secondary text, captions
+neutral-100	#F9FAFB	Page background
+white	#FFFFFF	Cards, modals, elevated surfaces
+
+8.2 Typography
+Elemen	Font Family	Weight	Size (rem)	Line Height
+Display / Hero	Inter atau Plus Jakarta Sans	700–800	3.75–4.5rem	1.1
+Heading 1	Inter	700	2.25rem	1.2
+Heading 2	Inter	600	1.875rem	1.25
+Heading 3	Inter	600	1.5rem	1.3
+Body Regular	Inter	400	1rem (16px)	1.6
+Body Small	Inter	400	0.875rem	1.5
+Caption / Label	Inter	500	0.75rem	1.4
+Monospace (kode)	JetBrains Mono	400	0.875rem	1.5
+
+8.3 Spacing & Layout
+•	Base unit: 4px. Semua spacing adalah kelipatan 4px (Tailwind default)
+•	Container max-width: 1280px (xl) dengan padding horizontal 16px (mobile) / 32px (desktop)
+•	Section padding vertikal: 64px (desktop) / 48px (tablet) / 32px (mobile)
+•	Grid system: CSS Grid dengan 12 kolom untuk desktop, 4 kolom mobile
+
+8.4 Component Design Principles
+•	Elevation system: shadow-sm (kartu biasa), shadow-md (dropdown), shadow-xl (modal)
+•	Border radius: rounded-lg (8px) default kartu, rounded-xl (12px) hero cards, rounded-full untuk badges dan chips
+•	Interaction states: hover (scale 1.02 + shadow), focus (ring biru 2px, offset 2px), active (scale 0.98), disabled (opacity 0.5)
+•	Loading states: skeleton shimmer untuk semua konten yang di-fetch async
+•	Empty states: ilustrasi + pesan deskriptif + action button jika berlaku
+
+8.5 Motion & Animation Guidelines
+Prinsip Animasi
+Gunakan animasi yang subtle, cepat, dan bertujuan. Animasi bukan sekadar dekorasi — harus membantu pengguna memahami perubahan state atau hierarki konten.
+
+Animasi	Library / Teknik	Durasi	Easing	Gunakan Untuk
+Page Enter	Framer Motion / CSS	300ms	ease-out	Transisi antar halaman
+Counter Animation	Custom Hook + requestAnimationFrame	2000ms	ease-out	Statistik K3 di Beranda
+Card Hover	CSS transform + transition	150ms	ease	Semua interactive cards
+Scroll Reveal	Framer Motion InView	400ms	ease-out	Section masuk viewport
+Modal / Lightbox	Framer Motion AnimatePresence	200ms	ease-out	Video player, galeri
+Accordion / FAQ	Framer Motion layout	250ms	ease-in-out	FAQ di halaman Kontak
+Navbar Scroll	CSS backdrop-blur + shadow	200ms	ease	Sticky header saat scroll
+Loader Skeleton	CSS @keyframes shimmer	Infinite	linear	Loading states semua konten
+
+📌 PENTING: Selalu implement prefers-reduced-motion media query. Pengguna yang sensitif terhadap animasi akan mendapatkan versi tanpa motion.
+ 
+9. Komponen React yang Dibutuhkan
+9.1 Global / Layout Components
+Komponen	Deskripsi	Props Utama
+<Navbar />	Sticky navigation dengan mega-menu, search, dan mobile hamburger	logo, navItems, ctaButton
+<Footer />	Footer perusahaan: logo, navigasi, kontak, copyright	companyInfo, links, socials
+<Layout />	Root layout wrapper dengan metadata dan skip-nav	children, metadata
+<Breadcrumb />	Navigasi hierarki halaman L2+	items: {label, href}[]
+<SEOHead />	Meta tags, OG tags, structured data JSON-LD	title, description, image, url
+<SkeletonLoader />	Placeholder shimmer untuk loading state	variant, count
+<ErrorBoundary />	Menangkap error React dan tampilkan fallback UI	fallback, children
+<ScrollToTop />	Tombol kembali ke atas saat scroll > 500px	-
+
+9.2 Home Page Components
+Komponen	Deskripsi	Catatan Teknis
+<HeroSection />	Full-viewport hero dengan background media, headline, dan CTA	Lazy load background video; fallback image jika video gagal
+<StatCounter />	Animated number counter untuk statistik K3	Gunakan IntersectionObserver; pause jika tidak di viewport
+<QuickAccessGrid />	Grid kartu navigasi cepat 3x2 atau 2x3	Keyboard navigable; ARIA labels wajib
+<CommitmentSection />	Alternating layout gambar-teks untuk nilai perusahaan	Scroll reveal animation per item
+<NewsOrUpdatesBanner />	Banner/ticker untuk pengumuman K3 terbaru	Opsional; data dari CMS/JSON
+
+9.3 Shared / Reusable UI Components
+Komponen	Deskripsi	Varian
+<Button />	Tombol dengan variant dan size yang dapat dikonfigurasi	primary, secondary, outline, ghost, danger
+<Card />	Container kartu dengan shadow dan border radius konsisten	default, elevated, flat, interactive
+<Badge />	Label kategori berwarna untuk regulasi, video, galeri	success, warning, danger, info, neutral
+<Modal />	Dialog modal dengan AnimatePresence dan focus trap	size: sm, md, lg, fullscreen
+<Lightbox />	Viewer foto/video fullscreen dengan prev/next	image, video mode
+<Accordion />	Expandable/collapsible section untuk FAQ	single, multiple expand mode
+<TabGroup />	Tab navigation untuk filter konten	horizontal, pills, underline variant
+<SearchInput />	Input pencarian dengan debounce	onSearch, placeholder, loading
+<FilterChip />	Toggle chip untuk filter kategori galeri/video	label, active, onToggle
+<Pagination />	Komponen paginasi untuk galeri dan regulasi	total, page, perPage, onChange
+<VideoCard />	Kartu video dengan thumbnail, durasi, kategori	url, title, duration, category
+<PhotoCard />	Kartu foto dengan hover overlay dan caption	src, alt, caption, category
+<RegulationRow />	Row item untuk daftar regulasi dengan badge dan link	number, title, year, type, url
+<OrgNode />	Node jabatan dalam org chart	title, name, level, responsibilities
+<MapMarker />	Custom marker untuk Safety Map	type, label, info
+<Timeline />	Vertical timeline untuk sejarah perusahaan	items: {year, title, description}[]
+<SectionHeader />	Header section dengan judul, subtitle, dan dekorasi garis	title, subtitle, align
+ 
+10. Struktur Folder Next.js (App Router)
+Berikut adalah struktur folder yang direkomendasikan untuk proyek ini, mengikuti convention Next.js App Router dan prinsip separation of concerns:
+
+ptfi-k3/
+├── app/                          # Next.js App Router root
+│   ├── layout.tsx                # Root layout (Navbar, Footer, Font)
+│   ├── page.tsx                  # Beranda (Home)
+│   ├── tentang/
+│   │   ├── page.tsx              # Tentang PT Freeport Indonesia
+│   │   ├── profil/page.tsx
+│   │   ├── sejarah/page.tsx
+│   │   └── komitmen/page.tsx
+│   ├── visi-misi/page.tsx
+│   ├── safety-map/page.tsx
+│   ├── struktur-organisasi/page.tsx
+│   ├── landasan-hukum/page.tsx
+│   ├── video/page.tsx
+│   ├── galeri/page.tsx
+│   ├── kontak/page.tsx
+│   ├── sitemap.ts                # Auto-generate sitemap.xml
+│   ├── robots.ts                 # robots.txt config
+│   └── not-found.tsx             # Custom 404 page
+├── components/
+│   ├── ui/                       # Atomic UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Badge.tsx
+│   │   ├── Modal.tsx
+│   │   ├── Lightbox.tsx
+│   │   ├── Accordion.tsx
+│   │   ├── TabGroup.tsx
+│   │   ├── SearchInput.tsx
+│   │   ├── FilterChip.tsx
+│   │   ├── Pagination.tsx
+│   │   ├── SkeletonLoader.tsx
+│   │   └── index.ts              # Barrel export
+│   ├── layout/                   # Layout components
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Breadcrumb.tsx
+│   │   └── ScrollToTop.tsx
+│   ├── sections/                 # Page section components
+│   │   ├── home/
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── StatCounter.tsx
+│   │   │   ├── QuickAccessGrid.tsx
+│   │   │   └── CommitmentSection.tsx
+│   │   ├── video/
+│   │   │   ├── VideoCard.tsx
+│   │   │   └── VideoPlayer.tsx
+│   │   ├── galeri/
+│   │   │   ├── PhotoCard.tsx
+│   │   │   └── GalleryGrid.tsx
+│   │   ├── safety-map/
+│   │   │   ├── MapContainer.tsx  # Dynamic import (no SSR)
+│   │   │   └── MapLegend.tsx
+│   │   └── landasan-hukum/
+│   │       └── RegulationTable.tsx
+│   └── shared/
+│       ├── SectionHeader.tsx
+│       ├── Timeline.tsx
+│       ├── OrgChart.tsx
+│       └── ErrorBoundary.tsx
+├── lib/
+│   ├── constants.ts              # Stats, nav items, config
+│   ├── utils.ts                  # Helper functions
+│   ├── hooks/
+│   │   ├── useCountUp.ts         # Counter animation hook
+│   │   ├── useInView.ts          # IntersectionObserver hook
+│   │   └── useDebounce.ts
+│   └── api/
+│       └── regulations.ts        # Data fetching functions
+├── data/
+│   ├── regulations.json          # Data regulasi K3
+│   ├── videos.json               # Data video library
+│   ├── gallery.json              # Data galeri foto
+│   ├── org-chart.json            # Data struktur organisasi
+│   └── navigation.ts             # Nav config
+├── public/
+│   ├── images/                   # Static images
+│   ├── icons/                    # SVG icons
+│   ├── videos/                   # Local video (kecil saja)
+│   └── docs/                     # PDF regulasi
+├── styles/
+│   └── globals.css               # Tailwind + custom CSS vars
+├── types/
+│   ├── index.ts                  # Global TypeScript types
+│   └── api.ts                    # API response types
+├── tailwind.config.ts
+├── next.config.ts
+├── tsconfig.json
+└── .env.local                    # Environment variables
+ 
+11. SEO Requirements
+11.1 On-Page SEO
+Halaman	Title Tag (< 60 karakter)	Meta Description (< 160 karakter)
+Beranda	K3 PT Freeport Indonesia | Portal Keselamatan Kerja	Portal resmi K3 PT Freeport Indonesia. Temukan informasi keselamatan kerja, regulasi K3, video orientasi, dan peta keselamatan area operasional.
+Tentang	Tentang PTFI | Komitmen Keselamatan Kerja	Pelajari profil, sejarah, dan komitmen PT Freeport Indonesia terhadap standar keselamatan kerja kelas dunia.
+Visi & Misi K3	Visi Misi K3 PT Freeport Indonesia	Visi dan misi keselamatan PT Freeport Indonesia. Budaya safety-first yang menjadi fondasi setiap aktivitas operasional.
+Safety Map	Safety Map | Peta Keselamatan Area Operasional PTFI	Peta interaktif area operasional PT Freeport Indonesia: titik kumpul darurat, jalur evakuasi, area risiko tinggi.
+Video K3	Video Keselamatan Kerja | PTFI K3 Media Library	Perpustakaan video K3 PT Freeport Indonesia: orientasi keselamatan, prosedur kerja aman, tanggap darurat.
+Galeri	Galeri Kegiatan K3 PT Freeport Indonesia	Dokumentasi foto kegiatan K3 PTFI: pelatihan, simulasi darurat, kampanye keselamatan kerja.
+
+11.2 Technical SEO Checklist
+•	Sitemap XML otomatis via next-sitemap atau built-in Next.js sitemap.ts (App Router)
+•	robots.txt yang dikonfigurasi untuk crawling halaman publik
+•	Structured Data (JSON-LD): Organization, WebSite, BreadcrumbList, VideoObject (video library)
+•	Canonical URL pada setiap halaman untuk mencegah duplicate content
+•	Hreflang jika konten dual-bahasa (id/en) diimplementasikan
+•	Open Graph tags lengkap: og:title, og:description, og:image (1200x630px), og:url, og:type
+•	Twitter Card meta tags: twitter:card (summary_large_image), twitter:title, twitter:description, twitter:image
+•	Image alt attributes wajib untuk semua gambar — deskriptif, bukan generic
+•	Semantic HTML: gunakan <main>, <article>, <section>, <nav>, <aside>, <header>, <footer> secara konsisten
+•	Heading hierarchy: hanya satu <h1> per halaman; urutan h1 > h2 > h3 tidak boleh dilompati
+ 
+12. Accessibility Requirements (WCAG 2.1 AA)
+12.1 Persyaratan Utama
+Kategori	Persyaratan	Implementasi
+Kontras Warna	Minimal 4.5:1 untuk body text; 3:1 untuk large text	Gunakan tool: WebAIM Contrast Checker sebelum finalisasi
+Navigasi Keyboard	Semua fungsi interaktif dapat diakses via Tab/Enter/Esc	Focus ring visible; focus trap di modal/lightbox
+Screen Reader	ARIA labels pada semua elemen interaktif tanpa label teks	aria-label, aria-describedby, role attributes
+Alternative Text	Alt text deskriptif untuk setiap gambar konten	Dekorasi murni: alt="" (kosong, bukan dihapus)
+Skip Navigation	Link "Skip to main content" sebagai elemen pertama halaman	Visually hidden tapi focusable
+Form Labels	Semua input field memiliki label yang terkait	<label for> atau aria-label
+Ukuran Target Tap	Minimum 44x44px untuk semua elemen interaktif di mobile	Terutama tombol icon dan link navigasi
+Reduced Motion	Matikan animasi jika prefers-reduced-motion: reduce	Media query di Tailwind/CSS
+Language Attribute	lang="id" pada tag <html>	Diset di root layout.tsx
+Error Identification	Pesan error yang jelas dan saran perbaikan pada form	Error state dengan ikon + teks, bukan hanya warna
+
+12.2 Testing Tools
+•	axe DevTools (browser extension) — automated scan
+•	WAVE Web Accessibility Evaluation Tool
+•	Google Lighthouse Accessibility Score (target >= 90)
+•	Manual keyboard navigation testing
+•	Screen reader testing: NVDA (Windows), VoiceOver (macOS/iOS)
+ 
+13. Responsive Design Requirements
+13.1 Breakpoints (Tailwind CSS Standard)
+Breakpoint	Min Width	Target Device	Layout Strategy
+xs (default)	0px	Phone Portrait (320–479px)	Single column; stacked layout
+sm	640px	Phone Landscape / Phablet	Single column; wider padding
+md	768px	Tablet Portrait	2 kolom; navbar horizontal
+lg	1024px	Tablet Landscape / Laptop	3 kolom; full navigation
+xl	1280px	Desktop Standard	Max-width container; 4 kolom
+2xl	1536px	Desktop Wide	Max container width tetap 1280px
+
+13.2 Mobile-First Component Rules
+•	Navbar: Hamburger menu (mobile) → Tab bar bottom (mobile fixed) → Horizontal nav + dropdown (desktop)
+•	Hero Section: Teks di bawah gambar (mobile) → Overlay teks di atas background (desktop)
+•	Stat Counter: 2x2 grid (mobile) → 4 kolom horizontal (desktop)
+•	Quick Access Grid: 2x3 grid (mobile) → 6 kartu satu baris (desktop)
+•	Video Grid: 1 kolom (mobile) → 2 kolom (tablet) → 3 kolom (desktop)
+•	Galeri: 2 kolom masonry (mobile) → 3 kolom (tablet) → 4 kolom (desktop)
+•	Safety Map: Full-width peta dengan layer control disederhanakan (mobile) → Split view peta + legend (desktop)
+•	Regulasi Table: Card list view (mobile) → Tabel penuh (desktop)
+ 
+14. Wireframe Description per Halaman
+14.1 Beranda (Home) — Wireframe
+Layout Vertical (top to bottom):
+19.	[NAVBAR] Logo kiri | Nav tengah | CTA kanan | Hamburger (mobile)
+20.	[HERO] Full viewport — background image/video dengan overlay gelap | Headline H1 besar | Sub-headline | 2 CTA button (primary + outline) | Scroll indicator arrow
+21.	[STATS] 4 kolom horizontal — setiap kolom: ikon besar (SVG, warna emas) + angka besar (counter) + label kecil — Divider dekoratif atas bawah
+22.	[QUICK ACCESS] Section header centered | Grid 6 kartu 3x2 — setiap kartu: ikon besar berwarna + label + arrow icon | Hover effect: scale + shadow
+23.	[COMMITMENT HIGHLIGHT] Alternating 2-col layout (gambar 40% + teks 60%) × 3 item — Setiap item: badge kategori + H3 + body text + link "Baca selengkapnya"
+24.	[NEWS BANNER] Opsional — background abu-abu gelap | Judul "Pengumuman Terbaru" | 3 item kartu horizontal atau ticker text
+25.	[FOOTER] Logo + deskripsi | Kolom navigasi | Kolom kontak | Kolom media sosial | Copyright bar bawah
+
+14.2 Safety Map K3 — Wireframe
+26.	[SECTION HEADER] Judul "Safety Map K3" + deskripsi singkat
+27.	[PETA UTAMA] Full-width peta Leaflet.js/Google Maps (height 600px desktop, 400px mobile)
+28.	[LAYER CONTROLS] Floating panel kanan atas peta — checklist untuk toggle: Assembly Points (hijau), First Aid (merah+putih), Fire Points (merah), Risk Areas (oranye), Evacuation Routes (biru)
+29.	[LEGEND] Di bawah peta — horizontal flex row ikon + label untuk setiap tipe marker
+30.	[INFO PANEL] Sidebar kanan (desktop) atau bottom sheet (mobile) — muncul saat marker diklik — konten: nama lokasi, deskripsi, instruksi, nomor kontak darurat
+
+14.3 Video Library — Wireframe
+31.	[HEADER] Judul + deskripsi + search input
+32.	[CATEGORY TABS] Pill tabs: Semua | Orientasi | Prosedur Aman | Tanggap Darurat | Kampanye K3
+33.	[VIDEO GRID] 3 kolom (desktop) grid — setiap VideoCard: thumbnail 16:9 + badge kategori + judul + durasi + tombol play — Klik buka Modal/Lightbox dengan iframe player
+34.	[FEATURED VIDEO] Opsional: 1 video besar featured di atas grid dengan auto-play thumbnail
+35.	[PAGINATION] 12 video per halaman atau infinite scroll dengan skeleton loader
+
+14.4 Galeri Kegiatan — Wireframe
+36.	[HEADER] Judul + search + filter chips kategori
+37.	[MASONRY GRID] 4 kolom desktop, 2 kolom mobile — foto berbeda tinggi — hover overlay: ikon zoom + judul + kategori
+38.	[LIGHTBOX] Full-screen overlay — foto besar centered — tombol X close — prev/next arrow — caption + kategori + tanggal di bawah foto
+39.	[LOAD MORE] Tombol atau infinite scroll
+ 
+15. Acceptance Criteria per Halaman
+15.1 Beranda (Home)
+•	AC-01: Hero section tampil penuh di semua resolusi, teks terbaca dengan kontras minimal 4.5:1
+•	AC-02: Counter animasi berjalan saat masuk viewport, berhenti di angka target yang benar
+•	AC-03: Semua 6 Quick Access card dapat diakses via keyboard dan memiliki ARIA label
+•	AC-04: CTA button mengarah ke halaman yang tepat
+•	AC-05: Lighthouse score >= 90 untuk Performance, Accessibility, SEO
+•	AC-06: Halaman responsif sempurna di 320px, 768px, dan 1280px
+
+15.2 Safety Map K3
+•	AC-07: Peta berhasil load dalam < 3 detik pada koneksi 4G
+•	AC-08: Semua marker tampil dengan ikon yang tepat sesuai kategori
+•	AC-09: Toggle layer berfungsi: aktifkan/nonaktifkan setiap kategori marker
+•	AC-10: Popup info muncul saat klik marker dengan informasi lengkap
+•	AC-11: Fallback gambar peta statis muncul jika Leaflet/Maps gagal load
+•	AC-12: Peta dapat di-zoom dan pan tanpa error di mobile (touch gestures)
+
+15.3 Video Library
+•	AC-13: Filter tab berfungsi: menampilkan hanya video sesuai kategori
+•	AC-14: Search input mem-filter video berdasarkan judul (debounce 300ms)
+•	AC-15: Modal video player terbuka saat klik thumbnail
+•	AC-16: Modal dapat ditutup via tombol X, klik overlay, atau tombol Esc
+•	AC-17: Skeleton loader muncul saat data video di-fetch
+
+15.4 Galeri Kegiatan
+•	AC-18: Filter kategori berfungsi dengan transisi smooth
+•	AC-19: Lightbox terbuka saat klik foto dengan gambar resolusi penuh
+•	AC-20: Navigasi prev/next di lightbox berfungsi via tombol dan keyboard arrow
+•	AC-21: Foto memiliki alt text yang deskriptif
+•	AC-22: Infinite scroll atau "Load More" berfungsi tanpa duplicate foto
+
+15.5 Landasan Hukum K3
+•	AC-23: Semua regulasi tampil dengan badge kategori yang tepat
+•	AC-24: Link unduh PDF membuka file baru di tab terpisah
+•	AC-25: Search/filter berfungsi real-time tanpa page reload
+ 
+16. Future Enhancement Opportunities
+Phase 2 — Prioritas Tinggi (6–12 bulan post-launch)
+•	CMS Integration (Contentful / Sanity / Strapi): Memungkinkan tim K3 non-teknis untuk mengelola konten — tambah video, upload foto galeri, perbarui regulasi — tanpa perlu developer.
+•	Sistem Pelaporan Insiden Online: Form digital untuk melaporkan near-miss, hazard observasi, dan insiden K3 secara langsung dari website dengan notifikasi ke tim K3.
+•	E-Learning Module: Modul pelatihan K3 interaktif dengan quiz dan sertifikat digital — integrasi dengan LMS internal perusahaan.
+•	Multi-bahasa (i18n): Dukungan penuh Bahasa Inggris untuk karyawan asing dan auditor internasional.
+
+Phase 3 — Inovasi Jangka Panjang (12–24 bulan)
+•	Safety Dashboard Real-time: Integrasi API dengan sistem internal untuk menampilkan data K3 terkini: Safe Man Hours hari ini, status area operasional, insiden aktif.
+•	Push Notification: Progressive Web App (PWA) dengan notifikasi push untuk pengumuman K3 penting, safety alerts, dan reminder pelatihan.
+•	AR Safety Map: Augmented Reality untuk navigasi area operasional menggunakan kamera smartphone — arahkan ke area dan lihat informasi keselamatan overlay.
+•	AI Safety Chatbot: Asisten virtual K3 yang dapat menjawab pertanyaan regulasi, prosedur, dan panduan keselamatan berbasis natural language.
+•	QR Code Integration: Setiap halaman/konten memiliki QR code yang dapat dipindai dari poster fisik di area operasional.
+ 
+17. Technology Stack & Architecture Recommendations
+17.1 Recommended Tech Stack
+Layer	Teknologi	Alasan Pemilihan
+Framework	Next.js 14+ (App Router)	SSG/SSR hybrid, SEO optimal, built-in optimisasi image & font
+Styling	Tailwind CSS v3 + CSS Variables	Utility-first, design token konsisten, purge CSS otomatis
+Animation	Framer Motion 11+	Deklaratif, performan, mendukung AnimatePresence & layout animations
+Peta	Leaflet.js + react-leaflet	Open-source, ringan, tidak memerlukan API key berbayar
+Icons	Lucide React	Tree-shakeable SVG icons, konsisten, lightweight
+Forms	React Hook Form + Zod	Minimal re-render, validasi TypeScript-first
+State	Zustand (jika diperlukan global state)	Minimal boilerplate, performa baik
+Fonts	next/font dengan Inter	Optimasi otomatis: subset, preload, zero layout shift
+Images	next/image	Automatic WebP/AVIF, lazy loading, size optimization
+Analytics	Google Analytics 4 / Plausible	GA4 untuk enterprise reporting; Plausible untuk privacy-friendly
+Deployment	Vercel (recommended) atau Nginx + PM2	Vercel untuk kemudahan; self-host untuk data residency requirement
+TypeScript	TypeScript 5+	Type safety, developer experience, maintainability jangka panjang
+Testing	Jest + React Testing Library + Playwright	Unit, integration, dan E2E testing
+CI/CD	GitHub Actions	Lint, test, build, preview deployment otomatis setiap PR
+
+17.2 Arsitektur Rendering
+•	Halaman statis (Beranda, Tentang, Visi-Misi, Struktur Org, Landasan Hukum): Static Site Generation (SSG) — dibangun saat deploy, tidak ada server overhead
+•	Halaman dengan konten dinamis (Video Library, Galeri): Incremental Static Regeneration (ISR) dengan revalidate 3600 detik — konten diperbarui tanpa full rebuild
+•	Safety Map: Client-side rendering (dynamic import dengan ssr: false) — Leaflet membutuhkan DOM dan tidak kompatibel dengan SSR
+•	Form Kontak (jika ada): Server Action (Next.js App Router) untuk validasi dan pengiriman di server
+
+Rekomendasi Senior Architect
+Gunakan data layer berbasis JSON lokal di /data/*.json untuk MVP. Ini memungkinkan pengembangan cepat tanpa infrastruktur backend. Migrasi ke CMS headless (Contentful/Sanity) dapat dilakukan di Phase 2 tanpa mengubah komponen frontend secara signifikan, cukup dengan mengganti layer data fetching.
+ 
+18. Dependencies, Risks & Mitigations
+Risiko	Probabilitas	Dampak	Mitigasi
+Konten K3 belum tersedia saat development	TINGGI	TINGGI	Buat struktur dengan placeholder konten; gunakan Lorem Ipsum bertipe; siapkan content checklist untuk tim K3
+Peta area operasional bersifat rahasia/sensitif	SEDANG	TINGGI	Gunakan peta generik atau gambar custom non-georeferenced; verifikasi dengan tim Legal & Security sebelum implementasi
+Ketergantungan pada API pihak ketiga (YouTube, Maps)	SEDANG	SEDANG	Siapkan fallback: embed self-hosted video; gambar peta statis jika API tidak tersedia
+Browser compatibility di area terpencil (network lambat)	TINGGI	SEDANG	Optimasi aggressive: Service Worker caching, offline mode untuk konten kritis, minimal JavaScript
+Scope creep dari permintaan fitur baru	TINGGI	SEDANG	Gunakan PRD ini sebagai kontrak fitur; semua penambahan melalui proses change request formal
+Kurangnya sumber daya frontend developer	SEDANG	TINGGI	Mulai dengan komponen paling kritis (Beranda, Video, Safety Map); iteratif menambah halaman lain
+
+18.1 Timeline Estimasi Pengembangan
+Sprint	Durasi	Deliverable
+Sprint 1 — Foundation	2 minggu	Setup proyek, Design System, Komponen UI dasar, Navbar, Footer, Layout
+Sprint 2 — Core Pages	3 minggu	Beranda (semua section), Tentang, Visi & Misi
+Sprint 3 — Content Pages	3 minggu	Video Library, Galeri Kegiatan, Landasan Hukum
+Sprint 4 — Feature Pages	3 minggu	Safety Map (Leaflet), Struktur Organisasi, Kontak & FAQ
+Sprint 5 — QA & Polish	2 minggu	Cross-browser testing, Accessibility audit, Performance optimization, SEO
+Sprint 6 — Launch Prep	1 minggu	Production deployment, Monitoring setup, Dokumentasi handover
+TOTAL	~14 minggu (~3.5 bulan)	MVP Launch Ready
+ 
+19. React Bits — Komponen Siap Pakai & Snippets
+React Bits adalah koleksi komponen React yang sudah teruji (battle-tested), dapat langsung dipakai atau diadaptasi tanpa overhead library besar. Seksi ini menyediakan blueprint kode nyata untuk setiap komponen kritis portal K3 PTFI — lengkap dengan TypeScript types, Tailwind classes, dan catatan implementasi.
+
+19.1 Hook: useCountUp — Animasi Counter Statistik K3
+Hook ini menggerakkan angka counter dari 0 ke target saat komponen masuk viewport. Dipakai untuk section Statistik K3 di Beranda.
+
+// lib/hooks/useCountUp.ts
+import { useEffect, useRef, useState } from 'react';
+
+interface UseCountUpOptions {
+  target: number;
+  duration?: number;   // ms, default 2000
+  startOnMount?: boolean;
+}
+
+export function useCountUp(
+  { target, duration = 2000, startOnMount = false }: UseCountUpOptions
+) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(startOnMount);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (!started) return;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(ease * target));
+      if (progress < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [started, target, duration]);
+
+  return { count, start: () => setStarted(true) };
+}
+Gunakan bersama useInView untuk memulai animasi saat elemen masuk viewport.
+
+19.2 Komponen: <StatCounter /> — Kartu Statistik Animasi
+// components/sections/home/StatCounter.tsx
+'use client';
+import { useEffect, useRef } from 'react';
+import { useCountUp } from '@/lib/hooks/useCountUp';
+import { LucideIcon } from 'lucide-react';
+
+interface StatItemProps {
+  icon: LucideIcon;
+  target: number;
+  suffix?: string;   // '+', '%', 'K', dll
+  label: string;
+  color?: string;    // Tailwind color class
+}
+
+function StatItem({ icon: Icon, target, suffix = '', label, color = 'text-amber-500' }: StatItemProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { count, start } = useCountUp({ target, duration: 2200 });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { start(); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [start]);
+
+  return (
+    <div ref={ref} className='flex flex-col items-center gap-3 p-6'>
+      <div className={`p-4 rounded-full bg-blue-950/60 ${color}`}>
+        <Icon size={32} strokeWidth={1.5} />
+      </div>
+      <span className='text-5xl font-bold text-white tabular-nums'>
+        {count.toLocaleString('id-ID')}{suffix}
+      </span>
+      <span className='text-sm font-medium text-slate-400 text-center'>{label}</span>
+    </div>
+  );
+}
+
+// Usage di Beranda:
+// <StatItem icon={Shield} target={50000000} suffix='+' label='Safe Man Hours' />
+// <StatItem icon={Award} target={365} suffix='' label='Zero Accident Days' />
+
+19.3 Komponen: <HeroSection /> — Hero Full-Viewport
+Hero dengan background video/gambar, overlay gradient, headline animasi masuk, dan CTA. Menggunakan next/image untuk optimasi otomatis.
+// components/sections/home/HeroSection.tsx
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowRight, PlayCircle } from 'lucide-react';
+
+const variants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  }),
+};
+
+export function HeroSection() {
+  return (
+    <section className='relative h-screen min-h-[600px] flex items-center overflow-hidden'>
+      {/* Background */}
+      <Image src='/images/hero-mine.jpg' alt='Area operasional PTFI'
+        fill priority className='object-cover object-center' />
+      {/* Gradient overlay */}
+      <div className='absolute inset-0 bg-gradient-to-r
+        from-blue-950/90 via-blue-950/70 to-transparent' />
+      {/* Content */}
+      <div className='relative z-10 container mx-auto px-6 lg:px-8 max-w-5xl'>
+        <motion.span custom={0} initial='hidden' animate='visible' variants={variants}
+          className='inline-flex items-center gap-2 px-3 py-1 rounded-full
+          bg-amber-500/20 border border-amber-500/40 text-amber-400 text-sm font-medium mb-6'>
+          Safety is Our Culture
+        </motion.span>
+        <motion.h1 custom={1} initial='hidden' animate='visible' variants={variants}
+          className='text-4xl md:text-6xl font-bold text-white leading-tight mb-4'>
+          Keselamatan Adalah <br />
+          <span className='text-amber-400'>Prioritas Utama</span> Kami
+        </motion.h1>
+        <motion.p custom={2} initial='hidden' animate='visible' variants={variants}
+          className='text-lg text-slate-300 max-w-2xl mb-8'>
+          PT Freeport Indonesia berkomitmen menciptakan lingkungan kerja
+          yang aman, sehat, dan berkelanjutan untuk seluruh insan perusahaan.
+        </motion.p>
+        <motion.div custom={3} initial='hidden' animate='visible' variants={variants}
+          className='flex flex-wrap gap-4'>
+          <Link href='/visi-misi'
+            className='inline-flex items-center gap-2 px-6 py-3 rounded-lg
+            bg-amber-500 hover:bg-amber-400 text-blue-950 font-semibold
+            transition-all duration-200 hover:scale-105 active:scale-95'>
+            Pelajari K3 Kami <ArrowRight size={18} />
+          </Link>
+          <Link href='/video'
+            className='inline-flex items-center gap-2 px-6 py-3 rounded-lg
+            border border-white/30 hover:border-white/60 text-white font-semibold
+            backdrop-blur-sm transition-all duration-200 hover:bg-white/10'>
+            <PlayCircle size={18} /> Lihat Video K3
+          </Link>
+        </motion.div>
+      </div>
+      {/* Scroll indicator */}
+      <div className='absolute bottom-8 left-1/2 -translate-x-1/2
+        animate-bounce text-white/50'>
+        <svg width='24' height='24' viewBox='0 0 24 24' fill='none'
+          stroke='currentColor' strokeWidth='2'>
+          <path d='M12 5v14M5 12l7 7 7-7'/>
+        </svg>
+      </div>
+    </section>
+  );
+}
+
+19.4 Komponen: <QuickAccessGrid /> — Grid Navigasi Cepat
+// components/sections/home/QuickAccessGrid.tsx
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Map, Video, Scale, Building2, Images, Phone } from 'lucide-react';
+
+const items = [
+  { icon: Map,       label: 'Safety Map',       href: '/safety-map',   color: 'bg-emerald-500/10 text-emerald-500' },
+  { icon: Video,     label: 'Video K3',          href: '/video',        color: 'bg-blue-500/10 text-blue-400'    },
+  { icon: Scale,     label: 'Regulasi K3',       href: '/landasan-hukum', color: 'bg-amber-500/10 text-amber-500' },
+  { icon: Building2, label: 'Struktur Org',      href: '/struktur-organisasi', color: 'bg-violet-500/10 text-violet-400' },
+  { icon: Images,    label: 'Galeri Kegiatan',   href: '/galeri',       color: 'bg-pink-500/10 text-pink-400'   },
+  { icon: Phone,     label: 'Kontak Darurat',    href: '/kontak',       color: 'bg-red-500/10 text-red-500'     },
+];
+
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+const item = {
+  hidden: { opacity: 0, y: 24, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
+
+export function QuickAccessGrid() {
+  return (
+    <section className='py-16 bg-slate-50 dark:bg-slate-900'>
+      <div className='container mx-auto px-6 max-w-6xl'>
+        <h2 className='text-2xl font-bold text-center text-blue-950 mb-10'>
+          Akses Cepat
+        </h2>
+        <motion.div
+          variants={container} initial='hidden'
+          whileInView='visible' viewport={{ once: true, amount: 0.2 }}
+          className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'>
+          {items.map(({ icon: Icon, label, href, color }) => (
+            <motion.div key={href} variants={item}>
+              <Link href={href}
+                className='group flex flex-col items-center gap-3 p-5 rounded-xl
+                bg-white dark:bg-slate-800 border border-slate-200
+                dark:border-slate-700 shadow-sm
+                hover:shadow-md hover:-translate-y-1 hover:border-blue-300
+                transition-all duration-200 focus-visible:ring-2
+                focus-visible:ring-blue-500 focus-visible:ring-offset-2'
+                aria-label={label}>
+                <div className={`p-3 rounded-lg ${color}
+                  group-hover:scale-110 transition-transform duration-200`}>
+                  <Icon size={24} strokeWidth={1.5} />
+                </div>
+                <span className='text-xs font-semibold text-slate-700
+                  dark:text-slate-300 text-center leading-tight'>{label}</span>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+19.5 Komponen: <Badge /> — Label Kategori
+// components/ui/Badge.tsx
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+
+const badgeVariants = cva(
+  'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full
+  text-xs font-semibold border transition-colors',
+  {
+    variants: {
+      variant: {
+        success: 'bg-emerald-50 text-emerald-700 border-emerald-200
+                  dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800',
+        warning: 'bg-amber-50 text-amber-700 border-amber-200
+                  dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800',
+        danger:  'bg-red-50 text-red-700 border-red-200
+                  dark:bg-red-950 dark:text-red-300 dark:border-red-800',
+        info:    'bg-blue-50 text-blue-700 border-blue-200
+                  dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800',
+        neutral: 'bg-slate-100 text-slate-700 border-slate-200
+                  dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700',
+      },
+    },
+    defaultVariants: { variant: 'neutral' },
+  }
+);
+
+interface BadgeProps extends VariantProps<typeof badgeVariants> {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function Badge({ variant, children, className }: BadgeProps) {
+  return <span className={cn(badgeVariants({ variant }), className)}>{children}</span>;
+}
+
+// Dependency: npm install class-variance-authority
+
+19.6 Komponen: <Accordion /> — FAQ Halaman Kontak
+// components/ui/Accordion.tsx
+'use client';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface AccordionItem { question: string; answer: string; }
+
+export function Accordion({ items }: { items: AccordionItem[] }) {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div className='divide-y divide-slate-200 dark:divide-slate-700 rounded-xl
+      border border-slate-200 dark:border-slate-700 overflow-hidden'>
+      {items.map(({ question, answer }, i) => (
+        <div key={i}>
+          <button
+            onClick={() => setOpen(open === i ? null : i)}
+            aria-expanded={open === i}
+            className='w-full flex items-center justify-between gap-4 px-5 py-4
+              text-left text-sm font-semibold text-slate-800 dark:text-slate-100
+              hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors'>
+            {question}
+            <motion.div animate={{ rotate: open === i ? 180 : 0 }}
+              transition={{ duration: 0.25 }}>
+              <ChevronDown size={18} className='shrink-0 text-slate-400' />
+            </motion.div>
+          </button>
+          <AnimatePresence initial={false}>
+            {open === i && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}>
+                <p className='px-5 pb-4 text-sm text-slate-600 dark:text-slate-400
+                  leading-relaxed'>
+                  {answer}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+19.7 Komponen: <VideoCard /> — Kartu Video Library
+// components/sections/video/VideoCard.tsx
+'use client';
+import Image from 'next/image';
+import { PlayCircle, Clock } from 'lucide-react';
+import { Badge } from '@/components/ui/Badge';
+import { motion } from 'framer-motion';
+
+interface VideoCardProps {
+  title: string;
+  thumbnail: string;
+  duration: string;   // '12:34'
+  category: 'orientasi' | 'prosedur' | 'darurat' | 'kampanye';
+  onClick: () => void;
+}
+
+const categoryMap = {
+  orientasi: { label: 'Orientasi',     variant: 'info'    as const },
+  prosedur:  { label: 'Prosedur Aman', variant: 'success' as const },
+  darurat:   { label: 'Tanggap Darurat', variant: 'danger' as const },
+  kampanye:  { label: 'Kampanye K3',   variant: 'warning' as const },
+};
+
+export function VideoCard({ title, thumbnail, duration, category, onClick }: VideoCardProps) {
+  const cat = categoryMap[category];
+  return (
+    <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
+      <button onClick={onClick}
+        className='group w-full text-left rounded-xl overflow-hidden bg-white
+        dark:bg-slate-800 border border-slate-200 dark:border-slate-700
+        shadow-sm hover:shadow-lg transition-shadow duration-300
+        focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'>
+        {/* Thumbnail */}
+        <div className='relative aspect-video overflow-hidden bg-slate-200'>
+          <Image src={thumbnail} alt={title} fill className='object-cover
+            group-hover:scale-105 transition-transform duration-500' />
+          {/* Play overlay */}
+          <div className='absolute inset-0 bg-blue-950/40 flex items-center
+            justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+            <PlayCircle size={56} className='text-white drop-shadow-lg
+              scale-90 group-hover:scale-100 transition-transform duration-300' />
+          </div>
+          {/* Duration badge */}
+          <span className='absolute bottom-2 right-2 flex items-center gap-1
+            bg-black/70 text-white text-xs px-2 py-0.5 rounded-md backdrop-blur-sm'>
+            <Clock size={11} /> {duration}
+          </span>
+        </div>
+        {/* Meta */}
+        <div className='p-4'>
+          <Badge variant={cat.variant} className='mb-2'>{cat.label}</Badge>
+          <h3 className='text-sm font-semibold text-slate-800 dark:text-slate-100
+            line-clamp-2 leading-snug'>{title}</h3>
+        </div>
+      </button>
+    </motion.div>
+  );
+}
+
+19.8 Komponen: <Modal /> — Video Player Lightbox
+// components/ui/Modal.tsx
+'use client';
+import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
+
+interface ModalProps {
+  open: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+  title?: string;
+}
+
+export function Modal({ open, onClose, children, title }: ModalProps) {
+  // Close on Escape key
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  // Prevent body scroll when modal open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <div role='dialog' aria-modal='true' aria-label={title}
+          className='fixed inset-0 z-50 flex items-center justify-center p-4'>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className='absolute inset-0 bg-black/80 backdrop-blur-sm'
+            onClick={onClose} />
+          {/* Panel */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 24 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className='relative z-10 w-full max-w-4xl rounded-2xl
+              bg-white dark:bg-slate-900 shadow-2xl overflow-hidden'>
+            <div className='flex items-center justify-between px-5 py-4
+              border-b border-slate-200 dark:border-slate-700'>
+              {title && <h2 className='font-semibold text-slate-800
+                dark:text-slate-100'>{title}</h2>}
+              <button onClick={onClose} aria-label='Tutup modal'
+                className='ml-auto p-1.5 rounded-lg text-slate-400
+                hover:text-slate-600 hover:bg-slate-100
+                dark:hover:bg-slate-800 transition-colors'>
+                <X size={20} />
+              </button>
+            </div>
+            <div className='p-5'>{children}</div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+19.9 Komponen: <SkeletonLoader /> — Loading Placeholder
+// components/ui/SkeletonLoader.tsx
+import { cn } from '@/lib/utils';
+
+interface SkeletonProps { className?: string; }
+
+export function Skeleton({ className }: SkeletonProps) {
+  return (
+    <div className={cn(
+      'animate-pulse rounded-md bg-slate-200 dark:bg-slate-700',
+      className
+    )} />
+  );
+}
+
+// Preset: Video Card Skeleton
+export function VideoCardSkeleton() {
+  return (
+    <div className='rounded-xl overflow-hidden border border-slate-200
+      dark:border-slate-700 bg-white dark:bg-slate-800'>
+      <Skeleton className='aspect-video w-full' />
+      <div className='p-4 space-y-2'>
+        <Skeleton className='h-4 w-20 rounded-full' />
+        <Skeleton className='h-4 w-full' />
+        <Skeleton className='h-4 w-3/4' />
+      </div>
+    </div>
+  );
+}
+
+// Preset: Gallery Photo Skeleton
+export function PhotoSkeleton({ tall = false }: { tall?: boolean }) {
+  return <Skeleton className={cn('w-full rounded-lg', tall ? 'h-64' : 'h-48')} />;
+}
+
+19.10 Komponen: <SectionHeader /> — Header Section Konsisten
+// components/shared/SectionHeader.tsx
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
+interface SectionHeaderProps {
+  eyebrow?: string;   // Teks kecil di atas judul
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center' | 'right';
+  className?: string;
+}
+
+export function SectionHeader({
+  eyebrow, title, subtitle,
+  align = 'center', className
+}: SectionHeaderProps) {
+  const alignClass = { left: 'text-left', center: 'text-center items-center',
+    right: 'text-right items-end' }[align];
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={cn('flex flex-col gap-2 mb-10', alignClass, className)}>
+      {eyebrow && (
+        <span className='text-xs font-bold tracking-widest uppercase
+          text-amber-500'>{eyebrow}</span>
+      )}
+      <h2 className='text-3xl md:text-4xl font-bold text-blue-950
+        dark:text-white'>{title}</h2>
+      {/* Decorative underline */}
+      <div className='flex gap-1 mt-1'>
+        <span className='h-1 w-12 rounded-full bg-amber-500' />
+        <span className='h-1 w-4 rounded-full bg-amber-300' />
+        <span className='h-1 w-2 rounded-full bg-amber-200' />
+      </div>
+      {subtitle && (
+        <p className='max-w-2xl text-base text-slate-500 dark:text-slate-400
+          mt-2'>{subtitle}</p>
+      )}
+    </motion.div>
+  );
+}
+
+19.11 Ringkasan Semua React Bits Komponen
+Komponen / Hook	File Path	Library Dep.	Dipakai Di
+useCountUp()	lib/hooks/useCountUp.ts	Vanilla (RAF)	Beranda — StatCounter
+<StatCounter />	sections/home/StatCounter.tsx	useCountUp, lucide-react	Beranda
+<HeroSection />	sections/home/HeroSection.tsx	framer-motion, next/image	Beranda
+<QuickAccessGrid />	sections/home/QuickAccessGrid.tsx	framer-motion, lucide-react	Beranda
+<Badge />	components/ui/Badge.tsx	class-variance-authority	Video, Galeri, Regulasi
+<Accordion />	components/ui/Accordion.tsx	framer-motion	Kontak — FAQ
+<VideoCard />	sections/video/VideoCard.tsx	framer-motion, next/image	Video Library
+<Modal />	components/ui/Modal.tsx	framer-motion	Video Player, Konfirmasi
+<Skeleton />	components/ui/SkeletonLoader.tsx	Tailwind CSS	Semua halaman async
+<SectionHeader />	components/shared/SectionHeader.tsx	framer-motion	Semua halaman
+<FilterChip />	components/ui/FilterChip.tsx	framer-motion	Video, Galeri
+<Timeline />	components/shared/Timeline.tsx	framer-motion	Tentang — Sejarah
+<MapContainer />	sections/safety-map/MapContainer.tsx	react-leaflet (no SSR)	Safety Map
+<GalleryGrid />	sections/galeri/GalleryGrid.tsx	framer-motion	Galeri Kegiatan
+useDebounce()	lib/hooks/useDebounce.ts	Vanilla	SearchInput, Filter
+useInView()	lib/hooks/useInView.ts	IntersectionObserver API	Scroll animations
+ 
+20. Advanced Animation System — Panduan Lengkap
+Seksi ini mendefinisikan sistem animasi komprehensif untuk portal K3 PTFI. Setiap animasi dirancang untuk memperkuat profesionalitas, memandu perhatian pengguna, dan memberikan umpan balik interaksi yang jelas — bukan sekadar dekorasi visual.
+
+20.1 Tiga Prinsip Animasi PTFI K3
+Prinsip	Definisi	Contoh Penerapan
+1. Purposeful (Bertujuan)	Setiap animasi memiliki fungsi komunikatif — menunjukkan perubahan state, hierarki konten, atau respons interaksi. Tidak ada animasi tanpa alasan.	Counter K3 memperkuat angka pencapaian. Skeleton loader mengkomunikasikan loading. Modal scale-up menarik perhatian.
+2. Swift (Cepat)	Durasi animasi UI dijaga pendek: 150–400ms. Pengguna tidak boleh menunggu animasi selesai untuk melakukan aksi berikutnya.	Card hover: 150ms. Page transition: 300ms. Modal enter: 250ms. Counter: 2000ms (background, tidak blocking).
+3. Accessible (Dapat Diakses)	Semua animasi harus dihormati oleh preferensi pengguna. prefers-reduced-motion: reduce wajib mematikan semua motion, tidak hanya memperlambat.	Gunakan motion-safe: dan motion-reduce: Tailwind variants. Di Framer Motion, wrap dengan useReducedMotion().
+
+20.2 Konfigurasi Global Framer Motion
+Buat preset variants yang reusable di lib/animations.ts untuk konsistensi seluruh proyek:
+// lib/animations.ts
+import type { Variants } from 'framer-motion';
+
+// ── Fade Up — untuk section entry, card entry ────────────────
+export const fadeUp: Variants = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
+
+// ── Fade In — untuk modal overlay, skeleton replacement ───────
+export const fadeIn: Variants = {
+  hidden:  { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.25 } },
+};
+
+// ── Scale Up — untuk modal panel, dropdown ────────────────────
+export const scaleUp: Variants = {
+  hidden:  { opacity: 0, scale: 0.92, y: 16 },
+  visible: { opacity: 1, scale: 1, y: 0,
+    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] } },
+  exit:    { opacity: 0, scale: 0.92, y: 16,
+    transition: { duration: 0.2, ease: [0.4, 0, 1, 1] } },
+};
+
+// ── Stagger Container — untuk grid cards ─────────────────────
+export const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+// ── Slide In Left — untuk sidebar panel ──────────────────────
+export const slideInLeft: Variants = {
+  hidden:  { opacity: 0, x: -32 },
+  visible: { opacity: 1, x: 0,
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+  exit:    { opacity: 0, x: -32,
+    transition: { duration: 0.25, ease: [0.4, 0, 1, 1] } },
+};
+
+// ── Slide In Right — untuk info panel Safety Map ─────────────
+export const slideInRight: Variants = {
+  hidden:  { opacity: 0, x: 32 },
+  visible: { opacity: 1, x: 0,
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+  exit:    { opacity: 0, x: 32,
+    transition: { duration: 0.25 } },
+};
+
+// ── Accordion — height animation ─────────────────────────────
+export const accordionContent: Variants = {
+  hidden:  { height: 0, opacity: 0 },
+  visible: { height: 'auto', opacity: 1,
+    transition: { height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+                  opacity: { duration: 0.25, delay: 0.05 } } },
+  exit:    { height: 0, opacity: 0,
+    transition: { height: { duration: 0.25 },
+                  opacity: { duration: 0.15 } } },
+};
+
+20.3 Implementasi prefers-reduced-motion
+Dua pendekatan yang harus diimplementasikan secara bersamaan:
+// PENDEKATAN 1: Tailwind CSS — Otomatis di semua class
+// Di tailwind.config.ts, tambahkan:
+// variants: { extend: { opacity: ['motion-reduce'] } }
+// Lalu di komponen:
+<div className='transition-transform duration-300 motion-reduce:transition-none
+  hover:-translate-y-1 motion-reduce:hover:translate-y-0'>
+  ...
+</div>
+
+// PENDEKATAN 2: Framer Motion — Hook useReducedMotion()
+'use client';
+import { motion, useReducedMotion } from 'framer-motion';
+import { fadeUp } from '@/lib/animations';
+
+function AnimatedCard({ children }: { children: React.ReactNode }) {
+  const prefersReducedMotion = useReducedMotion();
+  const variants = prefersReducedMotion
+    ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }   // No movement
+    : fadeUp;  // Full animation
+
+  return (
+    <motion.div
+      variants={variants}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}>
+      {children}
+    </motion.div>
+  );
+}
+
+// PENDEKATAN 3: CSS globals.css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+20.4 Scroll-Triggered Animation System
+Sistem animasi saat scroll menggunakan whileInView Framer Motion. Dibuat sebagai wrapper HOC agar konsisten di seluruh proyek:
+// components/shared/RevealOnScroll.tsx
+'use client';
+import { motion, useReducedMotion } from 'framer-motion';
+import { fadeUp } from '@/lib/animations';
+
+interface RevealProps {
+  children: React.ReactNode;
+  delay?: number;    // detik, default 0
+  className?: string;
+  amount?: number;   // threshold 0-1, default 0.2
+}
+
+export function RevealOnScroll({
+  children, delay = 0, className, amount = 0.2
+}: RevealProps) {
+  const reduceMotion = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      initial={reduceMotion ? {} : 'hidden'}
+      whileInView={reduceMotion ? {} : 'visible'}
+      viewport={{ once: true, amount }}
+      variants={reduceMotion ? {} : {
+        hidden: { opacity: 0, y: 28 },
+        visible: { opacity: 1, y: 0,
+          transition: { duration: 0.55, delay,
+            ease: [0.22, 1, 0.36, 1] } },
+      }}>
+      {children}
+    </motion.div>
+  );
+}
+
+// Usage di mana saja:
+// <RevealOnScroll delay={0.1}><StatBlock /></RevealOnScroll>
+// <RevealOnScroll delay={0.2}><StatBlock /></RevealOnScroll>
+// <RevealOnScroll delay={0.3}><StatBlock /></RevealOnScroll>
+
+20.5 Page Transitions — Next.js App Router
+// app/template.tsx  <-- template.tsx re-mounts on every route change
+// (Berbeda dari layout.tsx yang persisten)
+'use client';
+import { motion } from 'framer-motion';
+
+export default function Template({ children }: { children: React.ReactNode }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -12 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}>
+      {children}
+    </motion.div>
+  );
+}
+
+// Pastikan file ini ada di app/template.tsx
+// Next.js App Router akan otomatis wrap setiap page dengan template ini
+
+20.6 Navbar Scroll Animation — Glassmorphism Effect
+// components/layout/Navbar.tsx — scroll behavior
+'use client';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
+export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className={cn(
+        'fixed top-0 inset-x-0 z-50 transition-all duration-300',
+        scrolled
+          ? 'bg-blue-950/90 backdrop-blur-md shadow-lg shadow-blue-950/20
+             border-b border-white/10'
+          : 'bg-transparent'
+      )}>
+      {/* Nav content ... */}
+    </motion.header>
+  );
+}
+
+20.7 Shimmer Skeleton — CSS Custom Animation
+/* styles/globals.css — tambahkan di bawah @tailwind utilities */
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    theme('colors.slate.200') 25%,
+    theme('colors.slate.100') 50%,
+    theme('colors.slate.200') 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.dark .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    theme('colors.slate.800') 25%,
+    theme('colors.slate.700') 50%,
+    theme('colors.slate.800') 75%
+  );
+  background-size: 200% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer { animation: none; }
+}
+
+20.8 Gallery Filter Animation — Layout Animation Framer Motion
+Framer Motion layout prop secara otomatis menganimasikan perubahan posisi item saat filter kategori diubah di halaman Galeri — tanpa perlu menghitung posisi manual.
+// components/sections/galeri/GalleryGrid.tsx
+'use client';
+import { useState } from 'react';
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { PhotoCard } from './PhotoCard';
+
+const CATEGORIES = ['Semua', 'Pelatihan', 'Simulasi', 'Kampanye', 'Award'];
+
+export function GalleryGrid({ photos }: { photos: Photo[] }) {
+  const [active, setActive] = useState('Semua');
+  const filtered = active === 'Semua'
+    ? photos
+    : photos.filter(p => p.category === active);
+
+  return (
+    <div>
+      {/* Filter Chips */}
+      <div className='flex flex-wrap gap-2 mb-8'>
+        {CATEGORIES.map(cat => (
+          <button key={cat} onClick={() => setActive(cat)}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium
+              transition-all duration-200 ${active === cat
+                ? 'bg-blue-800 text-white shadow-md'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}>
+            {cat}
+          </button>
+        ))}
+      </div>
+      {/* Grid dengan layout animation */}
+      <LayoutGroup>
+        <motion.div layout
+          className='columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3'>
+          <AnimatePresence mode='popLayout'>
+            {filtered.map(photo => (
+              <motion.div key={photo.id} layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className='break-inside-avoid'>
+                <PhotoCard photo={photo} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </LayoutGroup>
+    </div>
+  );
+}
+
+20.9 Safety Map — Pulse Animation untuk Assembly Point Marker
+/* styles/globals.css — Pulse ring untuk titik kumpul darurat */
+@keyframes ping-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  80%  { transform: scale(2.2); opacity: 0;   }
+  100% { transform: scale(2.2); opacity: 0;   }
+}
+
+.marker-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: ping-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Tailwind custom component via @layer: */
+@layer components {
+  .map-assembly-point {
+    @apply relative flex items-center justify-center
+           w-8 h-8 rounded-full bg-emerald-500 text-white
+           shadow-lg cursor-pointer;
+    color: theme('colors.emerald.500');
+  }
+}
+
+/* Di komponen Leaflet: gunakan DivIcon dengan class ini */
+const assemblyIcon = L.divIcon({
+  html: '<div class="map-assembly-point marker-pulse">
+           <svg>...</svg></div>',
+  className: '',
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
+});
+
+20.10 Tailwind Config — Custom Animation Extensions
+// tailwind.config.ts
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          900: '#0D2040',
+          700: '#1B3A6B',  // PTFI Blue utama
+          500: '#2A5CAA',
+          100: '#EEF2F8',
+        },
+        safety: {
+          gold: '#C9870A',
+          orange: '#E87B0A',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      animation: {
+        'fade-up':    'fadeUp 0.5s ease-out forwards',
+        'fade-in':    'fadeIn 0.3s ease-out forwards',
+        'slide-down': 'slideDown 0.3s ease-out forwards',
+        'ping-slow':  'ping 2s cubic-bezier(0,0,0.2,1) infinite',
+        'shimmer':    'shimmer 1.5s linear infinite',
+        'count-up':   'fadeIn 0.2s ease-out forwards',
+      },
+      keyframes: {
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(24px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to:   { opacity: '1' },
+        },
+        slideDown: {
+          from: { opacity: '0', transform: 'translateY(-12px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        shimmer: {
+          from: { backgroundPosition: '-200% 0' },
+          to:   { backgroundPosition: '200% 0' },
+        },
+      },
+      transitionTimingFunction: {
+        // Custom easing curves untuk feel premium
+        'spring': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'smooth-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      boxShadow: {
+        'glow-blue':  '0 0 20px rgba(27, 58, 107, 0.3)',
+        'glow-gold':  '0 0 20px rgba(201, 135, 10, 0.25)',
+        'card-hover': '0 10px 40px rgba(0, 0, 0, 0.12)',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),   // Untuk konten artikel
+    require('@tailwindcss/aspect-ratio'), // Untuk thumbnail video 16:9
+    require('@tailwindcss/line-clamp'),   // Untuk title truncation
+  ],
+};
+
+export default config;
+
+20.11 Aturan Performa Animasi — Do & Don't
+Kategori	DO — Lakukan Ini	DON'T — Hindari Ini
+CSS Properties	Animasikan: transform (translate, scale, rotate) dan opacity — berjalan di GPU compositor thread	Jangan animasikan: width, height, top, left, margin, padding — trigger layout reflow dan paint
+Framer Motion	Gunakan whileInView dengan once: true agar animasi hanya berjalan sekali saat masuk viewport	Jangan gunakan animate di setiap re-render tanpa memoization — menyebabkan animasi berulang
+List Animations	Gunakan staggerChildren untuk animasi list yang elegan dan tidak membebani browser	Jangan stagger terlalu banyak item sekaligus (>20) — gunakan virtualisasi (react-virtual)
+Video Background	Gunakan muted autoPlay playsInline loop — sediakan fallback poster image — preload="none"	Jangan autoPlay video tanpa muted (browser akan memblok). Jangan preload video besar di mobile
+will-change	Gunakan will-change: transform hanya pada elemen yang AKTIF dianimasi	Jangan pasang will-change secara permanen pada banyak elemen — mengkonsumsi memory GPU
+Bundle Size	Import Framer Motion secara selektif: import { motion } from "framer-motion"	Jangan import seluruh library animasi jika hanya butuh beberapa fungsi
+
+20.12 Animation Timeline per Halaman
+Halaman	Elemen	Animasi	Trigger	Durasi
+Beranda — Hero	Badge eyebrow	fadeUp	Mount (delay 0s)	0.6s
+Beranda — Hero	H1 Headline	fadeUp	Mount (delay 0.15s)	0.6s
+Beranda — Hero	Sub-headline	fadeUp	Mount (delay 0.3s)	0.6s
+Beranda — Hero	CTA Buttons	fadeUp	Mount (delay 0.45s)	0.6s
+Beranda — Stats	4 StatItem cards	stagger fadeUp	InView (threshold 0.3)	0.5s each
+Beranda — Stats	Counter numbers	countUp (0 → target)	InView (threshold 0.3)	2.2s
+Beranda — QuickAccess	6 grid cards	stagger scaleUp	InView (threshold 0.2)	0.5s, delay 0.08s
+Beranda — Commitment	Image + text pairs	alternating slideIn	InView per item	0.55s
+Semua Halaman	Page enter	fadeUp (template.tsx)	Route change	0.3s
+Semua Halaman	SectionHeader	fadeUp	InView (threshold 0.4)	0.5s
+Video Library	VideoCard grid	stagger fadeUp	InView	0.4s, delay 0.06s
+Galeri	Filter transition	layout animation	Category click	Auto (spring)
+Galeri	Photo entry/exit	scaleUp / scaleDown	Filter change	0.3s
+Kontak — FAQ	Accordion content	height 0 → auto	Click	0.3s ease
+Safety Map	Assembly markers	pulse ring CSS	Always (loop)	2s infinite
+Safety Map	Info panel	slideInRight	Marker click	0.4s
+Struktur Org	Org nodes	stagger fadeUp	InView	0.4s, delay 0.05s
+Tentang — Timeline	Timeline items	fadeUp alternating	InView per item	0.5s, delay 0.1s
+
+20.13 Setup Instalasi — Semua Dependency Animasi
+# Install semua dependency animasi dan UI
+npm install framer-motion
+npm install lucide-react
+npm install class-variance-authority
+npm install clsx tailwind-merge
+
+# Tailwind plugins
+npm install -D @tailwindcss/typography
+npm install -D @tailwindcss/aspect-ratio
+npm install -D @tailwindcss/line-clamp
+
+# Peta interaktif
+npm install leaflet react-leaflet
+npm install -D @types/leaflet
+
+# Form handling
+npm install react-hook-form zod @hookform/resolvers
+
+# Utility: cn() helper (gabungan clsx + tailwind-merge)
+# lib/utils.ts:
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+# Versi terkini yang direkomendasikan (Juni 2026):
+# framer-motion: ^11.x
+# next: ^14.x atau ^15.x
+# tailwindcss: ^3.4.x
+# typescript: ^5.x
+ 
+Appendix A — Checklist Pre-Launch
+A.1 Technical Checklist
+•	☐ Semua halaman lulus Lighthouse Score >= 90 (Performance, Accessibility, Best Practices, SEO)
+•	☐ Core Web Vitals (LCP, FID/INP, CLS) dalam threshold GOOD
+•	☐ Cross-browser testing selesai (Chrome, Firefox, Edge, Safari, Chrome Mobile)
+•	☐ Responsive design verified di 320px, 375px, 768px, 1024px, 1280px, 1440px
+•	☐ Semua link internal dan eksternal berfungsi (gunakan broken-link-checker)
+•	☐ Sitemap.xml dan robots.txt terkonfigurasi dan disubmit ke Google Search Console
+•	☐ SSL certificate aktif dan redirect HTTP → HTTPS berfungsi
+•	☐ Error tracking (Sentry atau Vercel Analytics) terpasang
+•	☐ Google Analytics 4 terinstall dan events tracking terkonfigurasi
+•	☐ Semua gambar memiliki alt text
+•	☐ Keyboard navigation berfungsi di semua halaman
+•	☐ prefers-reduced-motion media query implemented
+
+A.2 Content Checklist
+•	☐ Semua teks final telah direview dan disetujui tim K3 dan Komunikasi
+•	☐ Semua foto memiliki hak penggunaan yang jelas (tidak menggunakan foto tanpa izin)
+•	☐ Video telah diuji loading dan playback di semua device target
+•	☐ Data statistik K3 telah diverifikasi akurasi dan currency-nya
+•	☐ Kontak darurat dan nomor telepon telah diverifikasi aktif
+•	☐ PDF regulasi dapat diunduh tanpa error
+
+— END OF DOCUMENT —
+PT Freeport Indonesia — Divisi K3 | PRD v1.0 | Juni 2026

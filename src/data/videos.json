@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "title": "Prosedur Evakuasi Darurat",
+    "category": "Tanggap Darurat",
+    "duration": "05:30",
+    "thumbnail": "/images/hero-mine.png"
+  },
+  {
+    "id": "2",
+    "title": "Orientasi K3 Area Tambang Terbuka",
+    "category": "Orientasi",
+    "duration": "12:15",
+    "thumbnail": "/images/hero-mine.png"
+  },
+  {
+    "id": "3",
+    "title": "Penggunaan APD Standar PTFI",
+    "category": "Prosedur Aman",
+    "duration": "08:45",
+    "thumbnail": "/images/hero-mine.png"
+  },
+  {
+    "id": "4",
+    "title": "Kampanye Keselamatan Berkendara",
+    "category": "Kampanye K3",
+    "duration": "03:20",
+    "thumbnail": "/images/hero-mine.png"
+  }
+]

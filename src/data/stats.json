@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "label": "Safe Man Hours",
+    "value": 50000000,
+    "suffix": "+",
+    "icon": "ShieldCheck"
+  },
+  {
+    "id": 2,
+    "label": "Zero Accident Days",
+    "value": 365,
+    "icon": "Calendar"
+  },
+  {
+    "id": 3,
+    "label": "Karyawan Terlatih",
+    "value": 24000,
+    "suffix": "+",
+    "icon": "Users"
+  },
+  {
+    "id": 4,
+    "label": "Safety Compliance Rate",
+    "value": 98,
+    "suffix": "%",
+    "icon": "CheckCircle"
+  }
+]
