@@ -1,26 +1,83 @@
 [
-  { "id": "gal-01", "title": "Pelatihan Bekerja di Ketinggian", "description": "Sertifikasi dan pelatihan bekerja di ketinggian untuk kontraktor baru.", "category": "Pelatihan K3", "image": "/images/gallery/gallery-01.jpg", "date": "2024-05-12", "location": "Ridge Camp" },
-  { "id": "gal-02", "title": "Evakuasi Darurat Gedung", "description": "Simulasi evakuasi kebakaran di gedung perkantoran utama.", "category": "Simulasi Darurat", "image": "/images/gallery/gallery-02.jpg", "date": "2024-04-20", "location": "Tembagapura" },
-  { "id": "gal-03", "title": "Kampanye Bulan K3 Nasional", "description": "Puncak acara perayaan bulan K3 nasional tahun 2024.", "category": "Kampanye K3", "image": "/images/gallery/gallery-03.jpg", "date": "2024-02-12", "location": "Grasberg" },
-  { "id": "gal-04", "title": "Inspeksi Alat Berat", "description": "Pengecekan kelayakan operasional truk tambang raksasa.", "category": "Inspeksi", "image": "/images/gallery/gallery-04.jpg", "date": "2024-06-01", "location": "Grasberg Mine" },
-  { "id": "gal-05", "title": "Penghargaan Zero Accident", "description": "Penyerahan sertifikat nihil kecelakaan kerja untuk departemen maintenance.", "category": "Penghargaan", "image": "/images/gallery/gallery-05.jpg", "date": "2024-03-15", "location": "Tembagapura" },
-  { "id": "gal-06", "title": "Pelatihan Penyelamatan Bawah Tanah", "description": "Training intensif untuk tim rescue tambang bawah tanah.", "category": "Pelatihan K3", "image": "/images/gallery/gallery-06.jpg", "date": "2024-05-25", "location": "Deep Mill Level Zone" },
-  { "id": "gal-07", "title": "Simulasi Tumpahan B3", "description": "Latihan tanggap darurat penanganan tumpahan bahan kimia.", "category": "Simulasi Darurat", "image": "/images/gallery/gallery-07.jpg", "date": "2024-01-10", "location": "Processing Plant" },
-  { "id": "gal-08", "title": "Pemasangan Rambu K3 Baru", "description": "Kampanye peningkatan kesadaran keselamatan di area pabrik.", "category": "Kampanye K3", "image": "/images/gallery/gallery-08.jpg", "date": "2024-05-02", "location": "Mill Area" },
-  { "id": "gal-09", "title": "Audit Internal Sistem Manajemen", "description": "Proses audit ISO 45001 oleh tim auditor K3.", "category": "Inspeksi", "image": "/images/gallery/gallery-09.jpg", "date": "2024-04-05", "location": "All Areas" },
-  { "id": "gal-10", "title": "Best Safety Performance", "description": "Apresiasi kinerja K3 terbaik kuartal pertama.", "category": "Penghargaan", "image": "/images/gallery/gallery-10.jpg", "date": "2024-04-10", "location": "Tembagapura" },
-  { "id": "gal-11", "title": "Training Pemadaman Api Ringan", "description": "Pelatihan penggunaan APAR bagi karyawan baru.", "category": "Pelatihan K3", "image": "/images/gallery/gallery-11.jpg", "date": "2024-06-05", "location": "MP 72" },
-  { "id": "gal-12", "title": "Drill Evakuasi Medis Udara", "description": "Simulasi pengangkutan korban dengan helikopter (medevac).", "category": "Simulasi Darurat", "image": "/images/gallery/gallery-12.jpg", "date": "2024-03-22", "location": "Helipad Tembagapura" },
-  { "id": "gal-13", "title": "Safety Talk Pagi", "description": "Penyampaian pesan keselamatan harian sebelum bekerja.", "category": "Kampanye K3", "image": "/images/gallery/gallery-13.jpg", "date": "2024-06-10", "location": "Heavy Workshop" },
-  { "id": "gal-14", "title": "Inspeksi Fasilitas Pengolahan", "description": "Pengecekan area rawan bahaya di fasilitas pengolahan bijih.", "category": "Inspeksi", "image": "/images/gallery/gallery-14.jpg", "date": "2024-05-18", "location": "Processing Plant" },
-  { "id": "gal-15", "title": "Sertifikat Emas K3", "description": "Menerima penghargaan emas dari Kementerian Ketenagakerjaan.", "category": "Penghargaan", "image": "/images/gallery/gallery-15.jpg", "date": "2024-02-28", "location": "Jakarta" },
-  { "id": "gal-16", "title": "Pelatihan Operator Alat Berat", "description": "Sertifikasi berkendara aman untuk operator hauling truck.", "category": "Pelatihan K3", "image": "/images/gallery/gallery-16.jpg", "date": "2024-04-15", "location": "Grasberg" },
-  { "id": "gal-17", "title": "Simulasi Kegagalan Listrik", "description": "Prosedur tanggap darurat saat blackout total di tambang bawah tanah.", "category": "Simulasi Darurat", "image": "/images/gallery/gallery-17.jpg", "date": "2024-02-05", "location": "DOZ Mine" },
-  { "id": "gal-18", "title": "Poster Lomba Keselamatan", "description": "Karya pemenang lomba desain poster K3 2024.", "category": "Kampanye K3", "image": "/images/gallery/gallery-18.jpg", "date": "2024-03-01", "location": "Tembagapura" },
-  { "id": "gal-19", "title": "Patroli Keamanan & Keselamatan", "description": "Patroli malam rutin di area operasi.", "category": "Inspeksi", "image": "/images/gallery/gallery-19.jpg", "date": "2024-06-08", "location": "MP 68" },
-  { "id": "gal-20", "title": "Penghargaan Safety Hero", "description": "Penghargaan individu bagi karyawan dengan kontribusi K3 terbaik.", "category": "Penghargaan", "image": "/images/gallery/gallery-20.jpg", "date": "2024-05-20", "location": "Tembagapura" },
-  { "id": "gal-21", "title": "Refreshment Training First Aid", "description": "Pelatihan penyegaran pertolongan pertama pada kecelakaan.", "category": "Pelatihan K3", "image": "/images/gallery/gallery-21.jpg", "date": "2024-01-25", "location": "Klinik Tembagapura" },
-  { "id": "gal-22", "title": "Simulasi Gempa Bumi", "description": "Latihan evakuasi massal akibat gempa bumi.", "category": "Simulasi Darurat", "image": "/images/gallery/gallery-22.jpg", "date": "2024-04-28", "location": "Area Perkantoran" },
-  { "id": "gal-23", "title": "Distribusi APD Standar", "description": "Pembagian Alat Pelindung Diri generasi terbaru kepada pekerja.", "category": "Kampanye K3", "image": "/images/gallery/gallery-23.jpg", "date": "2024-03-10", "location": "Logistic Warehouse" },
-  { "id": "gal-24", "title": "Inspeksi K3 Kontraktor", "description": "Evaluasi kepatuhan K3 di area kerja mitra kontraktor.", "category": "Inspeksi", "image": "/images/gallery/gallery-24.jpg", "date": "2024-05-30", "location": "Camp Area" }
+  {
+    "id": "gal-01",
+    "title": "Pusat Kontrol Operasi Tambang Jarak Jauh",
+    "description": "Pelatihan pengoperasian alat berat tambang jarak jauh secara aman di pusat kendali terpadu.",
+    "category": "Pelatihan K3",
+    "image": "/images/gallery/photo1.jpg",
+    "date": "2026-05-10",
+    "location": "Tembagapura"
+  },
+  {
+    "id": "gal-02",
+    "title": "Pemeriksaan Ore Crusher Bawah Tanah",
+    "description": "Inspeksi keselamatan rutin pada stasiun penghancur bijih (crusher) di area tambang bawah tanah.",
+    "category": "Inspeksi",
+    "image": "/images/gallery/photo2.jpg",
+    "date": "2026-05-15",
+    "location": "Deep Mill Level Zone"
+  },
+  {
+    "id": "gal-03",
+    "title": "Inspeksi Mesin Pemecah Batu Hidrolik",
+    "description": "Pengecekan dan inspeksi keselamatan operasional mesin hydraulic rock breaker oleh pengawas K3.",
+    "category": "Inspeksi",
+    "image": "/images/gallery/photo3.jpg",
+    "date": "2026-05-18",
+    "location": "Grasberg Mine"
+  },
+  {
+    "id": "gal-04",
+    "title": "Analisis Data K3 Terowongan Pengeboran",
+    "description": "Pemantauan parameter keselamatan udara dan stabilitas terowongan bawah tanah secara real-time.",
+    "category": "Inspeksi",
+    "image": "/images/gallery/photo4.jpg",
+    "date": "2026-05-20",
+    "location": "Deep Mill Level Zone"
+  },
+  {
+    "id": "gal-05",
+    "title": "Pengecekan Sistem Pengolahan Bijih Concentrator",
+    "description": "Operator melakukan inspeksi panel kontrol Milltronics dan memantau kondisi tangki flotasi.",
+    "category": "Inspeksi",
+    "image": "/images/gallery/photo5.jpg",
+    "date": "2026-05-22",
+    "location": "Mill Area"
+  },
+  {
+    "id": "gal-06",
+    "title": "Koordinasi Keselamatan Pekerjaan Utilitas",
+    "description": "Koordinasi K3 pra-kerja menggunakan komunikasi radio di area utilitas tambang bawah tanah.",
+    "category": "Kampanye K3",
+    "image": "/images/gallery/photo6.jpg",
+    "date": "2026-05-25",
+    "location": "Underground Mine"
+  },
+  {
+    "id": "gal-07",
+    "title": "Sertifikasi Kepatuhan Panel Ramsey Micro-Tech",
+    "description": "Inspeksi kepatuhan regulasi dan penyegelan unit timbangan Ramsey oleh otoritas Bea Cukai dan tim PTFI.",
+    "category": "Inspeksi",
+    "image": "/images/gallery/photo7.jpg",
+    "date": "2026-05-28",
+    "location": "Processing Plant"
+  },
+  {
+    "id": "gal-08",
+    "title": "Simulasi Penanganan Ore Pass Tambang Bawah Tanah",
+    "description": "Simulasi tanggap darurat dan pengawasan penumpahan bijih di ore pass tambang bawah tanah.",
+    "category": "Simulasi Darurat",
+    "image": "/images/gallery/photo8.jpg",
+    "date": "2026-06-01",
+    "location": "DOZ Mine"
+  },
+  {
+    "id": "gal-09",
+    "title": "Pelatihan Operator Alat Bor Atlas Copco",
+    "description": "Sertifikasi dan pelatihan langsung pengoperasian alat bor raksasa Atlas Copco di area kerja aman.",
+    "category": "Pelatihan K3",
+    "image": "/images/gallery/photo9.jpg",
+    "date": "2026-06-03",
+    "location": "Underground Mine"
+  }
 ]

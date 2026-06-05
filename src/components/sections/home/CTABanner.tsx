@@ -9,15 +9,15 @@ export function CTABanner() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
             Mari Wujudkan Area Kerja yang Aman
           </h2>
-          <p className="text-lg text-white/90">
+          <p className="text-left md:text-justify text-md md:text-lg text-white/90 ">
             Hubungi tim K3 kami jika Anda membutuhkan panduan, pelaporan, atau informasi lebih lanjut terkait keselamatan.
           </p>
         </div>
-        <div className="shrink-0">
+        {/* <div className="shrink-0">
           <Link href="/kontak" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-safety-gold-dark font-bold text-lg transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg">
             Hubungi Kami <ArrowRight size={20} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
