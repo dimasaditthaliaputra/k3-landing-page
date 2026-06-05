@@ -1,30 +1,26 @@
 [
   {
     "id": "1",
-    "title": "Prosedur Evakuasi Darurat",
+    "title": "Simulasi Penyelamatan Kecelakaan Kerja di Pertambangan",
     "category": "Tanggap Darurat",
-    "duration": "05:30",
-    "thumbnail": "/images/hero-mine.png"
+    "duration": "00:59",
+    "thumbnail": "https://img.youtube.com/vi/k54fnCzKOw0/hqdefault.jpg",
+    "url": "https://youtu.be/k54fnCzKOw0?si=EH3KuRtmF4KAsv0a"
   },
   {
     "id": "2",
-    "title": "Orientasi K3 Area Tambang Terbuka",
-    "category": "Orientasi",
-    "duration": "12:15",
-    "thumbnail": "/images/hero-mine.png"
+    "title": "Keselamatan Pertambangan - Lima Langkah Menuju Selamat - PT Freeport Indonesia",
+    "category": "Prosedur Aman",
+    "duration": "03:21",
+    "thumbnail": "https://img.youtube.com/vi/cpCeXxEdGj4/hqdefault.jpg",
+    "url": "https://youtu.be/cpCeXxEdGj4?si=ghH6NKg8nc6I_rTZ"
   },
   {
     "id": "3",
-    "title": "Penggunaan APD Standar PTFI",
-    "category": "Prosedur Aman",
-    "duration": "08:45",
-    "thumbnail": "/images/hero-mine.png"
-  },
-  {
-    "id": "4",
-    "title": "Kampanye Keselamatan Berkendara",
+    "title": "Safety Campaign Video, Sadar, Patuh dan Peduli.",
     "category": "Kampanye K3",
-    "duration": "03:20",
-    "thumbnail": "/images/hero-mine.png"
+    "duration": "01:00",
+    "thumbnail": "https://img.youtube.com/vi/JXObT-FDBZs/hqdefault.jpg",
+    "url": "https://youtu.be/JXObT-FDBZs?si=E4LxQ1p8h2v_e8da"
   }
 ]
