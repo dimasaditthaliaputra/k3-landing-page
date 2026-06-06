@@ -316,9 +316,9 @@ export default function Navbar() {
   const navItems = [
     { label: 'Beranda', href: '/' },
     { label: 'Tentang', href: '/#tentang' },
+    { label: 'Organisasi', href: '/struktur-organisasi' },
     { label: 'Safety Map', href: '/safety-map' },
     { label: 'Regulasi', href: '/landasan-hukum' },
-    // { label: 'Video', href: '/video' },
     { label: 'Galeri', href: '/galeri' },
     { label: 'Kontak', href: '/#kontak' },
   ];

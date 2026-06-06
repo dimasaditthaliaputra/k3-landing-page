@@ -1,0 +1,402 @@
+[
+  {
+    "id": "1",
+    "name": "MIND ID 51,23% - Freeport-McMoRan 48,77%",
+    "position": "Pemegang Saham",
+    "department": "Pemegang Saham",
+    "parentId": null,
+    "level": "Pemegang Saham",
+    "responsibilities": [
+      {
+        "id": "res-1",
+        "title": "Investasi & Kepemilikan",
+        "area": "Korporat",
+        "description": "Pemegang saham utama PT Freeport Indonesia."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Komisaris Utama + 5 Komisaris",
+    "position": "Dewan Komisaris",
+    "department": "Dewan Komisaris",
+    "parentId": "1",
+    "level": "Komisaris",
+    "responsibilities": [
+      {
+        "id": "res-2",
+        "title": "Pengawasan Eksekutif",
+        "area": "Korporat",
+        "description": "Melakukan pengawasan dan memberikan nasihat kepada Direksi."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Pimpinan Eksekutif Tertinggi",
+    "position": "Presiden Direktur",
+    "department": "Direksi",
+    "parentId": "2",
+    "level": "Direksi Utama",
+    "responsibilities": [
+      {
+        "id": "res-3",
+        "title": "Manajemen Perusahaan",
+        "area": "Seluruh Operasional",
+        "description": "Memimpin seluruh operasi bisnis dan operasional perusahaan."
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Wakil Presiden Direktur",
+    "position": "Wakil Presiden Direktur",
+    "department": "Direksi",
+    "parentId": "3",
+    "level": "Direksi Utama",
+    "responsibilities": [
+      {
+        "id": "res-4",
+        "title": "Manajemen Operasional",
+        "area": "Seluruh Operasional",
+        "description": "Membantu Presiden Direktur dalam memimpin operasional."
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Direktur",
+    "position": "Direktur Operasi",
+    "department": "Operasi",
+    "parentId": "4",
+    "level": "Direksi Fungsional",
+    "responsibilities": [
+      {
+        "id": "res-5",
+        "title": "Operasional Tambang & Pabrik",
+        "area": "Operasional",
+        "description": "Bertanggung jawab atas seluruh kegiatan operasi utama."
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Direktur",
+    "position": "Direktur Keuangan",
+    "department": "Keuangan",
+    "parentId": "4",
+    "level": "Direksi Fungsional",
+    "responsibilities": [
+      {
+        "id": "res-6",
+        "title": "Manajemen Keuangan",
+        "area": "Keuangan",
+        "description": "Mengelola finansial dan anggaran."
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Direktur",
+    "position": "Direktur SDM dan Umum",
+    "department": "SDM dan Umum",
+    "parentId": "4",
+    "level": "Direksi Fungsional",
+    "responsibilities": [
+      {
+        "id": "res-7",
+        "title": "Manajemen Sumber Daya Manusia",
+        "area": "SDM",
+        "description": "Mengelola tenaga kerja dan urusan umum."
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Direktur",
+    "position": "Direktur Legal dan Gov. Affairs",
+    "department": "Legal dan Gov. Affairs",
+    "parentId": "4",
+    "level": "Direksi Fungsional",
+    "responsibilities": [
+      {
+        "id": "res-8",
+        "title": "Hukum & Pemerintahan",
+        "area": "Legal",
+        "description": "Menangani urusan hukum perusahaan dan relasi pemerintah."
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Direktur",
+    "position": "Direktur Sustainability",
+    "department": "Sustainability",
+    "parentId": "4",
+    "level": "Direksi Fungsional",
+    "responsibilities": [
+      {
+        "id": "res-9",
+        "title": "Keberlanjutan",
+        "area": "Lingkungan & Sosial",
+        "description": "Mengelola keberlanjutan lingkungan dan sosial."
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "SVP",
+    "position": "SVP Mining Operations",
+    "department": "Mining Operations",
+    "parentId": "5",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-10",
+        "title": "Operasi Tambang",
+        "area": "Tambang",
+        "description": "Memimpin operasi tambang secara keseluruhan."
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "SVP",
+    "position": "SVP Processing",
+    "department": "Processing",
+    "parentId": "5",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-11",
+        "title": "Pengolahan Bijih",
+        "area": "Pabrik",
+        "description": "Memimpin proses pengolahan mineral."
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "SVP",
+    "position": "SVP Finance",
+    "department": "Finance",
+    "parentId": "6",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-12",
+        "title": "Divisi Keuangan",
+        "area": "Keuangan",
+        "description": "Mengepalai divisi keuangan operasional."
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "SVP",
+    "position": "SVP Human Resources",
+    "department": "Human Resources",
+    "parentId": "7",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-13",
+        "title": "Divisi SDM",
+        "area": "SDM",
+        "description": "Mengepalai divisi sumber daya manusia."
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "SVP",
+    "position": "SVP Safety dan ESHS",
+    "department": "Safety dan ESHS",
+    "parentId": "9",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-14",
+        "title": "K3 dan Lingkungan",
+        "area": "Seluruh Area",
+        "description": "Mengepalai divisi K3 dan perlindungan lingkungan."
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "SVP",
+    "position": "SVP Community Affairs",
+    "department": "Community Affairs",
+    "parentId": "9",
+    "level": "SVP Divisi",
+    "responsibilities": [
+      {
+        "id": "res-15",
+        "title": "Pengembangan Masyarakat",
+        "area": "Sosial",
+        "description": "Mengepalai divisi urusan komunitas."
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "VP",
+    "position": "VP Underground Mining",
+    "department": "Underground Mining",
+    "parentId": "10",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-16",
+        "title": "Tambang Bawah Tanah",
+        "area": "Underground",
+        "description": "Mengelola operasi tambang bawah tanah."
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "VP",
+    "position": "VP Surface Operations",
+    "department": "Surface Operations",
+    "parentId": "10",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-17",
+        "title": "Operasi Permukaan",
+        "area": "Permukaan",
+        "description": "Mengelola operasi di permukaan tambang."
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "VP",
+    "position": "VP Concentrating",
+    "department": "Concentrating",
+    "parentId": "11",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-18",
+        "title": "Konsentrator",
+        "area": "Pabrik Konsentrator",
+        "description": "Mengelola pabrik pengolahan bijih."
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "VP",
+    "position": "VP Infrastructure dan Logistics",
+    "department": "Infrastructure dan Logistics",
+    "parentId": "5",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-19",
+        "title": "Infrastruktur & Logistik",
+        "area": "Pendukung",
+        "description": "Mengelola sarana, prasarana, dan rantai pasok."
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "VP",
+    "position": "VP Exploration dan Geology",
+    "department": "Exploration dan Geology",
+    "parentId": "5",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-20",
+        "title": "Eksplorasi",
+        "area": "Eksplorasi",
+        "description": "Mencari dan memetakan cadangan mineral baru."
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "name": "VP",
+    "position": "VP HR Development",
+    "department": "HR Development",
+    "parentId": "13",
+    "level": "VP Departemen",
+    "responsibilities": [
+      {
+        "id": "res-21",
+        "title": "Pengembangan SDM",
+        "area": "SDM",
+        "description": "Mengelola pelatihan dan pengembangan karyawan."
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "name": "Manager",
+    "position": "Manager",
+    "department": "Departemen",
+    "parentId": "16",
+    "level": "Manajerial",
+    "responsibilities": [
+      {
+        "id": "res-22",
+        "title": "Manajemen Departemen",
+        "area": "Area Spesifik",
+        "description": "Mengelola departemen spesifik dalam divisi."
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Group Leader",
+    "position": "Group Leader",
+    "department": "Bagian",
+    "parentId": "22",
+    "level": "Manajerial",
+    "responsibilities": [
+      {
+        "id": "res-23",
+        "title": "Pimpinan Kelompok",
+        "area": "Area Spesifik",
+        "description": "Memimpin kelompok kerja spesifik."
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "name": "Supervisor",
+    "position": "Supervisor",
+    "department": "Seksi",
+    "parentId": "23",
+    "level": "Manajerial",
+    "responsibilities": [
+      {
+        "id": "res-24",
+        "title": "Pengawasan Lapangan",
+        "area": "Area Spesifik",
+        "description": "Melakukan pengawasan langsung."
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Sekitar 20.000 Karyawan",
+    "position": "Karyawan Operasional",
+    "department": "Tambang, Pabrik, Logistik, Administrasi",
+    "parentId": "24",
+    "level": "Operasional",
+    "responsibilities": [
+      {
+        "id": "res-25",
+        "title": "Tugas Lapangan",
+        "area": "Seluruh Area",
+        "description": "Menjalankan tugas-tugas operasional harian."
+      }
+    ]
+  }
+]
