@@ -6,11 +6,11 @@ interface MapLegendProps {
 }
 
 export const CATEGORY_STYLES: Record<MarkerCategory, { icon: React.ElementType; color: string; bg: string; label: string }> = {
-  'assembly-point': { icon: MapPin, color: 'text-green-600', bg: 'bg-green-100', label: 'Assembly Point' },
-  'medical': { icon: Activity, color: 'text-red-600', bg: 'bg-red-100', label: 'Pos Medis' },
-  'fire-safety': { icon: Flame, color: 'text-orange-500', bg: 'bg-orange-100', label: 'APAR / Fire Safety' },
-  'evacuation-route': { icon: Map, color: 'text-blue-500', bg: 'bg-blue-100', label: 'Jalur Evakuasi' },
-  'security-post': { icon: Shield, color: 'text-neutral-700', bg: 'bg-neutral-200', label: 'Pos Keamanan' },
+  'assembly-point': { icon: MapPin, color: 'text-green-600', bg: 'bg-green-100', label: 'Jalur Keluar & Assembly' },
+  'medical': { icon: Activity, color: 'text-emerald-800', bg: 'bg-emerald-100', label: 'P3K' },
+  'fire-safety': { icon: Flame, color: 'text-red-600', bg: 'bg-red-100', label: 'APAR' },
+  'evacuation-route': { icon: Map, color: 'text-orange-500', bg: 'bg-orange-100', label: 'Tangga Darurat' },
+  'security-post': { icon: Shield, color: 'text-neutral-500', bg: 'bg-neutral-200', label: 'Ruangan' },
 };
 
 export function MapLegend({ className = '' }: MapLegendProps) {

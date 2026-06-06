@@ -25,10 +25,10 @@ const createCustomIcon = (category: string) => {
     // Map tailwind text colors to hex for SVG stroke/fill
     const colorMap: Record<string, string> = {
       'text-green-600': '#16a34a',
+      'text-emerald-800': '#065f46',
       'text-red-600': '#dc2626',
       'text-orange-500': '#f97316',
-      'text-blue-500': '#3b82f6',
-      'text-neutral-700': '#404040',
+      'text-neutral-500': '#737373',
     };
     const color = colorMap[colorClass] || '#000000';
     

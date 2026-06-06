@@ -45,6 +45,46 @@ export default function SafetyMapPage() {
         </div>
       </section>
 
+      {/* Explanation Section */}
+      <section className="py-16 md:py-24 bg-neutral-900 border-t border-neutral-800">
+        <div className="container-k3">
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <SectionHeader 
+                  title="Panduan Denah & Rute Keselamatan" 
+                  subtitle="Informasi detail rancangan rute evakuasi dan penempatan fasilitas K3 pada seluruh lantai gedung."
+                  eyebrow="Rencana Evakuasi"
+                  align="left"
+                />
+                <div className="space-y-6 text-neutral-300 text-justify leading-relaxed text-base mt-8">
+                  <p>
+                    Denah jalur evakuasi kebakaran dan keselamatan fasilitas tambang industri ini dirancang untuk memastikan proses evakuasi pekerja dapat dilakukan secara cepat, aman, dan terarah saat terjadi keadaan darurat. Denah terdiri dari dua lantai yaitu lantai 1 (ground floor) sebagai area operasional dan lantai 2 (upper floor) sebagai area kontrol, laboratorium, dan manajemen.
+                  </p>
+                  <p>
+                    Secara keseluruhan, denah ini memenuhi prinsip keselamatan dan kesehatan kerja (K3) dengan menyediakan jalur evakuasi yang jelas, rambu petunjuk arah, peralatan keselamatan kebakaran, serta titik kumpul yang aman. Dengan adanya denah ini, proses evakuasi dapat dilakukan secara terstruktur dan meminimalkan risiko cedera saat terjadi keadaan darurat.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-8 bg-neutral-950/50 p-8 rounded-3xl border border-neutral-800/80">
+                <div className="border-l-4 border-green-600 pl-4">
+                  <h3 className="text-white font-bold text-lg mb-2">Lantai 1 — Ground Floor (Area Operasional)</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed text-justify">
+                    Pada lantai 1 terdapat area heavy workshop, processing plant, logistics warehouse, dan power plant yang merupakan area dengan tingkat risiko tinggi. Jalur evakuasi ditandai dengan warna hijau yang mengarah menuju koridor utama, kemudian menuju pintu keluar dan titik kumpul (assembly point). Selain itu, pada lantai ini juga tersedia fasilitas keselamatan seperti APAR, kotak P3K, alarm kebakaran, dan tangga darurat.
+                  </p>
+                </div>
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="text-white font-bold text-lg mb-2">Lantai 2 — Upper Floor (Area Kontrol & Manajemen)</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed text-justify">
+                    Lantai 2 terdiri dari control room, laboratorium, flotation area, dan management office. Jalur evakuasi pada lantai ini diarahkan menuju tangga darurat yang terhubung langsung dengan jalur evakuasi di lantai 1. Penempatan tangga darurat berada di area tengah bangunan untuk mempermudah akses evakuasi dari seluruh ruangan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Emergency Contacts Section */}
       <section className="py-20 bg-neutral-950 border-t border-neutral-800">
         <div className="container-k3">

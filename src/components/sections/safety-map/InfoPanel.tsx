@@ -58,7 +58,11 @@ export function InfoPanel({ marker, onClose, isMobile }: InfoPanelProps) {
 
             <div className="mt-2">
               <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-4 ${CATEGORY_STYLES[marker.category].bg} ${CATEGORY_STYLES[marker.category].color}`}>
-                {CATEGORY_STYLES[marker.category].label}
+                {(() => {
+                  const Icon = CATEGORY_STYLES[marker.category].icon;
+                  return <Icon size={13} strokeWidth={2.5} className="shrink-0" />;
+                })()}
+                <span>{CATEGORY_STYLES[marker.category].label}</span>
               </div>
 
               <h2 id="info-panel-title" className="text-2xl font-bold text-white mb-3">
