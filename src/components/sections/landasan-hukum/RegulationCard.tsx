@@ -1,4 +1,4 @@
-import { Download } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 import { Regulation } from '@/types/regulation';
 
 interface RegulationCardProps {
@@ -26,9 +26,23 @@ export function RegulationCard({ regulation }: RegulationCardProps) {
         </span>
       </div>
       
-      <div className="mb-6 flex-grow">
+      <div className="mb-4 flex-grow">
         <h3 className="text-sm font-semibold text-safety-gold mb-1">{regulation.nomor}</h3>
-        <p className="text-white font-bold leading-tight">{regulation.judul}</p>
+        <p className="text-white font-bold leading-tight mb-3">{regulation.judul}</p>
+        <div className="flex flex-col gap-1 text-xs">
+          <div className="flex justify-between items-center bg-neutral-800/30 p-2 rounded">
+            <span className="text-neutral-500">Status</span>
+            <span className={`font-semibold ${
+              regulation.status === 'Berlaku' ? 'text-emerald-500' : 'text-red-500'
+            }`}>
+              {regulation.status}
+            </span>
+          </div>
+          <div className="flex justify-between items-center bg-neutral-800/30 p-2 rounded">
+            <span className="text-neutral-500">Sumber</span>
+            <span className="text-neutral-300 font-medium">{regulation.sumber}</span>
+          </div>
+        </div>
       </div>
 
       <a
@@ -36,10 +50,19 @@ export function RegulationCard({ regulation }: RegulationCardProps) {
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto flex items-center justify-center gap-2 w-full py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white rounded-lg transition-colors font-medium text-sm"
-        aria-label={`Download PDF ${regulation.nomor}`}
+        aria-label={`Buka regulasi ${regulation.nomor}`}
       >
-        <Download size={16} />
-        Download PDF
+        {regulation.url.toLowerCase().endsWith('.pdf') ? (
+          <>
+            <Download size={16} />
+            Download PDF
+          </>
+        ) : (
+          <>
+            <ExternalLink size={16} />
+            Buka Website
+          </>
+        )}
       </a>
     </div>
   );

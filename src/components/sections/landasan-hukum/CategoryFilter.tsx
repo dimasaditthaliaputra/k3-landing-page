@@ -4,8 +4,7 @@ interface CategoryFilterProps {
   activeCategory: RegulationCategory;
   onChange: (category: RegulationCategory) => void;
 }
-
-const CATEGORIES: RegulationCategory[] = ['Semua', 'UU', 'PP', 'Permen', 'Standar Internasional'];
+const CATEGORIES: RegulationCategory[] = ['Semua', 'UU', 'PP', 'Permen', 'Standar dan Pedoman'];
 
 export function CategoryFilter({ activeCategory, onChange }: CategoryFilterProps) {
   return (

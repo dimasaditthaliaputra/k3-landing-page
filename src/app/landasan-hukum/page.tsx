@@ -25,7 +25,7 @@ export default function LandasanHukumPage() {
       uu: allRegulations.filter(r => r.kategori === 'UU').length,
       pp: allRegulations.filter(r => r.kategori === 'PP').length,
       permen: allRegulations.filter(r => r.kategori === 'Permen').length,
-      internasional: allRegulations.filter(r => r.kategori === 'Standar Internasional').length,
+      internasional: allRegulations.filter(r => r.kategori === 'Standar dan Pedoman').length,
     };
   }, []);
 

@@ -1,4 +1,4 @@
-import { Download, FileWarning } from 'lucide-react';
+import { Download, FileWarning, ExternalLink } from 'lucide-react';
 import { Regulation } from '@/types/regulation';
 import { RegulationCard } from './RegulationCard';
 
@@ -46,6 +46,8 @@ export function RegulationTable({ regulations }: RegulationTableProps) {
               <th className="px-6 py-4">Judul Regulasi</th>
               <th className="px-6 py-4">Kategori</th>
               <th className="px-6 py-4 text-center">Tahun</th>
+              <th className="px-6 py-4">Status</th>
+              <th className="px-6 py-4">Sumber</th>
               <th className="px-6 py-4 text-center rounded-tr-2xl">Aksi</th>
             </tr>
           </thead>
@@ -66,6 +68,16 @@ export function RegulationTable({ regulations }: RegulationTableProps) {
                 <td className="px-6 py-4 text-center text-neutral-400 font-medium">
                   {reg.tahun}
                 </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-semibold ${
+                    reg.status === 'Berlaku' ? 'bg-emerald-500/10 text-emerald-500' : 'bg-red-500/10 text-red-500'
+                  }`}>
+                    {reg.status}
+                  </span>
+                </td>
+                <td className="px-6 py-4 text-neutral-400 text-sm whitespace-nowrap">
+                  {reg.sumber}
+                </td>
                 <td className="px-6 py-4">
                   <div className="flex justify-center">
                     <a
@@ -73,10 +85,19 @@ export function RegulationTable({ regulations }: RegulationTableProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white rounded-lg transition-colors font-medium text-xs border border-transparent hover:border-neutral-600"
-                      aria-label={`Download PDF ${reg.nomor}`}
+                      aria-label={`Buka regulasi ${reg.nomor}`}
                     >
-                      <Download size={14} />
-                      PDF
+                      {reg.url.toLowerCase().endsWith('.pdf') ? (
+                        <>
+                          <Download size={14} />
+                          PDF
+                        </>
+                      ) : (
+                        <>
+                          <ExternalLink size={14} />
+                          Website
+                        </>
+                      )}
                     </a>
                   </div>
                 </td>
