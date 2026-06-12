@@ -109,7 +109,23 @@
     "category": "security-post",
     "description": "Pusat pemantauan kontrol area operasi.",
     "coordinates": { "lat": 550, "lng": 610 },
-    "emergencyContact": "Ext. 2222"
+    "emergencyContact": "Ext. 2222",
+    "riskLevel": "Sedang",
+    "requiredPPE": ["Safety Shoes", "ID Badge"],
+    "roomSpecs": {
+      "function": "Pusat Kendali Operasi",
+      "activity": "Monitoring & Control",
+      "capacity": "10 Orang",
+      "risks": "Kelelahan mata, radiasi layar"
+    },
+    "safetyFacilities": ["CCTV", "APAR (CO2)", "Alarm Kebakaran", "Akses Biometrik"],
+    "potentialHazards": ["Ergonomi", "Listrik"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 96
+    },
+    "auditFindings": "Sistem monitoring lengkap dan redundan.",
+    "recommendations": "Lakukan penyesuaian kursi ergonomis secara berkala."
   },
   {
     "id": "sec-2",
@@ -117,7 +133,23 @@
     "category": "security-post",
     "description": "Kantor manajemen lantai 2.",
     "coordinates": { "lat": 195, "lng": 600 },
-    "emergencyContact": "Ext. 2223"
+    "emergencyContact": "Ext. 2223",
+    "riskLevel": "Rendah",
+    "requiredPPE": ["Safety Shoes", "ID Badge"],
+    "roomSpecs": {
+      "function": "Area Perkantoran",
+      "activity": "Administrasi dan Rapat",
+      "capacity": "30 Orang",
+      "risks": "Korsleting ringan"
+    },
+    "safetyFacilities": ["APAR (Powder)", "Kotak P3K", "Jalur Evakuasi"],
+    "potentialHazards": ["Listrik", "Ergonomi"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 100
+    },
+    "auditFindings": "Manajemen kabel sangat rapi.",
+    "recommendations": "Lanjutkan inspeksi kelistrikan rutin bulanan."
   },
   {
     "id": "sec-3",
@@ -125,6 +157,190 @@
     "category": "security-post",
     "description": "Area flotasi lantai 2.",
     "coordinates": { "lat": 415, "lng": 650 },
-    "emergencyContact": "Ext. 2223"
+    "emergencyContact": "Ext. 2223",
+    "riskLevel": "Sangat Tinggi",
+    "requiredPPE": ["Helm", "Safety Shoes", "Kacamata", "Earplug", "Respirator", "Sarung Tangan Karet"],
+    "roomSpecs": {
+      "function": "Area Pemrosesan Utama",
+      "activity": "Pemisahan Mineral",
+      "capacity": "15 Orang",
+      "risks": "Paparan bahan kimia berbahaya, Terjatuh"
+    },
+    "safetyFacilities": ["Eyewash Station", "Emergency Shower", "APAR (Foam)", "Jalur Evakuasi"],
+    "potentialHazards": ["Kimia", "Mekanis", "Pekerjaan di Ketinggian", "Kebisingan"],
+    "auditCompliance": {
+      "status": "Kritis",
+      "score": 65
+    },
+    "auditFindings": "Terdeteksi genangan bahan kimia ringan di walkway. Barikade kurang memadai.",
+    "recommendations": "Segera bersihkan tumpahan, pasang secondary containment, perbaiki grating walkway."
+  },
+  {
+    "id": "sec-4",
+    "name": "Heavy Workshop",
+    "category": "security-post",
+    "description": "Area perbaikan dan perawatan alat berat (Lantai 1).",
+    "coordinates": { "lat": 500, "lng": 150 },
+    "emergencyContact": "Ext. 2224",
+    "riskLevel": "Tinggi",
+    "requiredPPE": ["Helm", "Safety Shoes", "Kacamata", "Sarung Tangan", "Earplug"],
+    "roomSpecs": {
+      "function": "Perawatan Alat Berat",
+      "activity": "Mekanikal dan Pengelasan",
+      "capacity": "25 Orang",
+      "risks": "Tertimpa beban berat, Terkena percikan las"
+    },
+    "safetyFacilities": ["APAR (Powder)", "Kotak P3K", "Jalur Evakuasi", "Exhaust Fan"],
+    "potentialHazards": ["Mekanis", "Panas", "Listrik", "Kebisingan"],
+    "auditCompliance": {
+      "status": "Butuh Perbaikan",
+      "score": 82
+    },
+    "auditFindings": "Beberapa kabel las tidak tergulung rapi.",
+    "recommendations": "Sediakan rak gulungan kabel khusus."
+  },
+  {
+    "id": "sec-5",
+    "name": "Processing Plant",
+    "category": "security-post",
+    "description": "Area utama pengolahan mineral (Lantai 1).",
+    "coordinates": { "lat": 500, "lng": 370 },
+    "emergencyContact": "Ext. 2225",
+    "riskLevel": "Sangat Tinggi",
+    "requiredPPE": ["Helm", "Safety Shoes", "Kacamata", "Respirator", "Earplug"],
+    "roomSpecs": {
+      "function": "Pengolahan Mineral",
+      "activity": "Crushing & Grinding",
+      "capacity": "40 Orang",
+      "risks": "Paparan debu silika, Kebisingan ekstrim"
+    },
+    "safetyFacilities": ["APAR (Foam)", "Emergency Shower", "Eyewash Station", "Jalur Evakuasi", "Alarm Kebakaran"],
+    "potentialHazards": ["Kimia", "Mekanis", "Kebisingan"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 91
+    },
+    "auditFindings": "Ventilasi debu bekerja optimal.",
+    "recommendations": "Lanjutkan pemantauan emisi debu berkala."
+  },
+  {
+    "id": "sec-6",
+    "name": "Logistics Warehouse",
+    "category": "security-post",
+    "description": "Gudang penyimpanan material dan spare part (Lantai 1).",
+    "coordinates": { "lat": 300, "lng": 150 },
+    "emergencyContact": "Ext. 2226",
+    "riskLevel": "Sedang",
+    "requiredPPE": ["Helm", "Safety Shoes", "Rompi"],
+    "roomSpecs": {
+      "function": "Penyimpanan Material",
+      "activity": "Bongkar Muat Barang",
+      "capacity": "15 Orang",
+      "risks": "Tertabrak forklift, Tertimpa barang"
+    },
+    "safetyFacilities": ["APAR (Powder)", "Jalur Evakuasi", "Cermin Tikungan"],
+    "potentialHazards": ["Mekanis (Forklift)"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 95
+    },
+    "auditFindings": "Jalur pejalan kaki dan forklift terpisah jelas.",
+    "recommendations": "Pastikan garis batas tetap dicat ulang jika memudar."
+  },
+  {
+    "id": "sec-7",
+    "name": "Power Plant",
+    "category": "security-post",
+    "description": "Fasilitas pembangkit listrik utama (Lantai 1).",
+    "coordinates": { "lat": 190, "lng": 150 },
+    "emergencyContact": "Ext. 2227",
+    "riskLevel": "Sangat Tinggi",
+    "requiredPPE": ["Helm", "Safety Shoes (Dielektrik)", "Kacamata", "Earplug", "Sarung Tangan (Tahan Tegangan)"],
+    "roomSpecs": {
+      "function": "Pembangkit Listrik",
+      "activity": "Distribusi Daya Listrik",
+      "capacity": "10 Orang",
+      "risks": "Sengatan listrik tegangan tinggi, Ledakan"
+    },
+    "safetyFacilities": ["APAR (CO2)", "Hydrant", "Alarm Kebakaran", "Pintu Tahan Api"],
+    "potentialHazards": ["Listrik", "Panas", "Kebisingan"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 98
+    },
+    "auditFindings": "Akses ruangan dijaga ketat, panel listrik terkunci.",
+    "recommendations": "Lakukan termografi panel listrik setiap kuartal."
+  },
+  {
+    "id": "sec-8",
+    "name": "Lab 1",
+    "category": "security-post",
+    "description": "Laboratorium pengujian kimia 1 (Lantai 2).",
+    "coordinates": { "lat": 550, "lng": 820 },
+    "emergencyContact": "Ext. 2228",
+    "riskLevel": "Tinggi",
+    "requiredPPE": ["Safety Shoes", "Kacamata", "Jas Lab", "Sarung Tangan Karet", "Respirator"],
+    "roomSpecs": {
+      "function": "Pengujian Kimia",
+      "activity": "Analisis Sampel Mineral",
+      "capacity": "12 Orang",
+      "risks": "Tumpahan bahan kimia berbahaya, Gas beracun"
+    },
+    "safetyFacilities": ["Fume Hood", "Eyewash Station", "Emergency Shower", "APAR (CO2)", "Spill Kit"],
+    "potentialHazards": ["Kimia", "Biologis"],
+    "auditCompliance": {
+      "status": "Butuh Perbaikan",
+      "score": 86
+    },
+    "auditFindings": "Ditemukan reagen tanpa label tanggal kedaluwarsa.",
+    "recommendations": "Segera berikan label pada semua bahan kimia."
+  },
+  {
+    "id": "sec-9",
+    "name": "Lab 2",
+    "category": "security-post",
+    "description": "Laboratorium pengujian fisika dan mekanik (Lantai 2).",
+    "coordinates": { "lat": 450, "lng": 870 },
+    "emergencyContact": "Ext. 2229",
+    "riskLevel": "Sedang",
+    "requiredPPE": ["Safety Shoes", "Kacamata", "Jas Lab"],
+    "roomSpecs": {
+      "function": "Pengujian Mekanik",
+      "activity": "Uji Kuat Tekan Material",
+      "capacity": "8 Orang",
+      "risks": "Pecahan sampel uji terlempar"
+    },
+    "safetyFacilities": ["Shielding Guard", "APAR (Powder)", "Kotak P3K"],
+    "potentialHazards": ["Mekanis"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 94
+    },
+    "auditFindings": "Pelindung mesin penguji berfungsi baik.",
+    "recommendations": "Pastikan kalibrasi alat uji tidak terlewat."
+  },
+  {
+    "id": "sec-10",
+    "name": "Control Room 2",
+    "category": "security-post",
+    "description": "Ruang kontrol sekunder dekat Management Office (Lantai 2).",
+    "coordinates": { "lat": 280, "lng": 600 },
+    "emergencyContact": "Ext. 2230",
+    "riskLevel": "Sedang",
+    "requiredPPE": ["Safety Shoes", "ID Badge"],
+    "roomSpecs": {
+      "function": "Pusat Kendali Sekunder",
+      "activity": "Monitoring Data Produksi",
+      "capacity": "6 Orang",
+      "risks": "Kelelahan mata"
+    },
+    "safetyFacilities": ["CCTV", "APAR (CO2)", "Alarm Kebakaran"],
+    "potentialHazards": ["Ergonomi", "Listrik"],
+    "auditCompliance": {
+      "status": "Memenuhi Standar",
+      "score": 95
+    },
+    "auditFindings": "Peralatan berfungsi dengan baik.",
+    "recommendations": "Lakukan rotasi personel untuk mengurangi kelelahan visual."
   }
 ]

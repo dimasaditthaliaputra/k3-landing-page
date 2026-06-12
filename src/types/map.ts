@@ -5,6 +5,18 @@ export type MarkerCategory =
   | 'evacuation-route'
   | 'security-post';
 
+export interface RoomSpecs {
+  function: string;
+  activity: string;
+  capacity: string;
+  risks: string;
+}
+
+export interface AuditCompliance {
+  status: string;
+  score: number;
+}
+
 export interface MapMarker {
   id: string;
   name: string;
@@ -15,4 +27,12 @@ export interface MapMarker {
     lng: number;
   };
   emergencyContact?: string;
+  riskLevel?: 'Rendah' | 'Sedang' | 'Tinggi' | 'Sangat Tinggi';
+  requiredPPE?: string[];
+  roomSpecs?: RoomSpecs;
+  safetyFacilities?: string[];
+  potentialHazards?: string[];
+  auditCompliance?: AuditCompliance;
+  auditFindings?: string;
+  recommendations?: string;
 }
